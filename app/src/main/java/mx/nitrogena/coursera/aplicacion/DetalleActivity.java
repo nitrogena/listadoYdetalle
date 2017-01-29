@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class DetalleActivity extends AppCompatActivity {
     TextView tvNombre;
     TextView tvTelefono;
     TextView tvCorreo;
+    ImageView ivFoto;
 
     ImageButton ibContactar;
     ImageButton ibOcultar;
@@ -35,22 +37,30 @@ public class DetalleActivity extends AppCompatActivity {
         Toolbar actionBar = (Toolbar) findViewById(R.id.actionBar);
         setSupportActionBar(actionBar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Bundle parametros = getIntent().getExtras();
         String nombre = parametros.getString("nombre");
         String telefono = parametros.getString("telefono");
         String correo = parametros.getString("correo");
 
+
+        int foto = parametros.getInt("foto");
+
+
         tvNombre = (TextView) findViewById(R.id.tvNombre);
         tvTelefono = (TextView) findViewById(R.id.tvTel);
         tvCorreo = (TextView) findViewById(R.id.tvCorreo);
 
-
+          ivFoto = (ImageView) findViewById(R.id.ivFoto);
 
                Log.i("telefono", telefono);
 
         tvNombre.setText(nombre);
         tvCorreo.setText(correo);
         tvTelefono.setText(telefono);
+
+        ivFoto.setImageResource(foto);
 
         consultar();
 

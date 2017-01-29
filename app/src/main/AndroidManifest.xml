@@ -16,7 +16,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".ListaActivity" />
-        <activity android:name=".DetalleActivity"></activity>
+        <activity android:name=".DetalleActivity"
+            android:parentActivityName=".ListaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListaActivity"></meta-data>
+
+        </activity>
     </application>
 
 </manifest>

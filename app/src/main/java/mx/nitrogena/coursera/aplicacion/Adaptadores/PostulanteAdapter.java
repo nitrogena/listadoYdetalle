@@ -56,6 +56,7 @@ public class PostulanteAdapter extends RecyclerView.Adapter<PostulanteAdapter.Po
                 intent.putExtra("nombre", psPostulante.getNombre());
                 intent.putExtra("telefono", psPostulante.getTelefono());
                 intent.putExtra("correo", psPostulante.getCorreo());
+                intent.putExtra("foto", psPostulante.getFoto());
 
                 activity.startActivity(intent);
             }
