@@ -4,6 +4,10 @@ import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
@@ -12,6 +16,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import mx.nitrogena.coursera.aplicacion.Adaptadores.PostulanteAdapter;
 import mx.nitrogena.coursera.aplicacion.Datos.Postulantes;
 
 public class ListaActivity extends AppCompatActivity {
@@ -21,23 +26,47 @@ public class ListaActivity extends AppCompatActivity {
 
     ListView lvPostulantes;
 
-    ArrayList<Postulantes> postulantes;
+    ArrayList<Postulantes> arrPostulantes;
+
+    private RecyclerView rvListaPostulantes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
 
-        postulantes = new ArrayList<Postulantes>();
-        postulantes.add(new Postulantes("Nidia Orduña", "77777777", "nidia.iof@gmail.com"));
-        postulantes.add(new Postulantes("David Chávez", "88888888", "david@inventado.com"));
-        postulantes.add(new Postulantes("Luis Ezcurdia", "99999999", "luis@inventado.com"));
-        postulantes.add(new Postulantes("Marduk Pérez", "66666666", "marduk@inventado.com"));
+        Toolbar actionBar = (Toolbar) findViewById(R.id.actionBar);
+        setSupportActionBar(actionBar);
 
-        ArrayList<String> nombresPostulantes = new ArrayList<>();
-        for (Postulantes postulante: postulantes){
-            nombresPostulantes.add(postulante.getNombre());
-        }
+        rvListaPostulantes = (RecyclerView) findViewById(R.id.rvPostulante);
+
+        LinearLayoutManager llmLayout = new LinearLayoutManager(this);
+        llmLayout.setOrientation(LinearLayoutManager.VERTICAL);
+
+        //GridLayoutManager glmLayout = new GridLayoutManager(this, 2);
+
+        rvListaPostulantes.setLayoutManager(llmLayout);
+        InicializarListaPostulantes();
+        inicializarAdaptador();
+
+
+        GridLayoutManager glm = new GridLayoutManager(this, 2);
+
+
+
+        /* Antes de colocar el adaptador
+
+        arrPostulantes = new ArrayList<Postulantes>();
+
+        arrPostulantes.add(new Postulantes("Nidia Orduña", "77777777", "nidia@inventado.com", R.drawable.pelo_mujer_48));
+        arrPostulantes.add(new Postulantes("David Chávez", "88888888", "david@inventado.com", R.drawable.message_48));
+        arrPostulantes.add(new Postulantes("Luis Ezcurdia", "99999999", "luis@inventado.com", R.drawable.persona_de_sexo_masculino_48));
+        arrPostulantes.add(new Postulantes("Marduk Pérez", "66666666", "marduk@inventado.com", R.drawable.phone_48));
+
+
+        ArrayList<String> arrNombresPostulantes = new ArrayList<>();
+        for (Postulantes postulante: arrPostulantes){
+            arrNombresPostulantes.add(postulante.getNombre());}
 
         lvPostulantes = (ListView) findViewById(R.id.lv_postulantes);
         lvPostulantes.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombresPostulantes));
@@ -54,6 +83,7 @@ public class ListaActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        */
 
         srlRefresh = (SwipeRefreshLayout) findViewById(R.id.srlRefresh);
 
@@ -64,6 +94,8 @@ public class ListaActivity extends AppCompatActivity {
                 refrescar();
             }
         });
+
+        //finish();
     }
 
     private void refrescar() {
@@ -71,5 +103,23 @@ public class ListaActivity extends AppCompatActivity {
         lvPostulantes.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrPlanetas));
 
         srlRefresh.setRefreshing(false);
+    }
+
+    public void InicializarListaPostulantes(){
+
+        arrPostulantes = new ArrayList<Postulantes>();
+
+        arrPostulantes.add(new Postulantes("Nidia Orduña", "77777777", "nidia@inventado.com", R.drawable.pelo_mujer_48));
+        arrPostulantes.add(new Postulantes("David Chávez", "88888888", "david@inventado.com", R.drawable.message_48));
+        arrPostulantes.add(new Postulantes("Luis Ezcurdia", "99999999", "luis@inventado.com", R.drawable.persona_de_sexo_masculino_48));
+        arrPostulantes.add(new Postulantes("Marduk Pérez", "66666666", "marduk@inventado.com", R.drawable.phone_48));
+
+
+
+    }
+
+    public void inicializarAdaptador(){
+        PostulanteAdapter paAdaptador = new PostulanteAdapter(arrPostulantes, this);
+        rvListaPostulantes.setAdapter(paAdaptador);
     }
 }

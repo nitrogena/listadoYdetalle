@@ -5,14 +5,16 @@ package mx.nitrogena.coursera.aplicacion.Datos;
  */
 
 public class Postulantes {
-    String nombre;
-    String telefono;
-    String correo;
+    private String nombre;
+    private String telefono;
+    private String correo;
+    private int foto;
 
-    public Postulantes(String nombre, String telefono, String correo) {
+    public Postulantes(String nombre, String telefono, String correo, int foto) {
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
+        this.foto = foto;
     }
 
     public String getNombre() {
@@ -38,4 +40,13 @@ public class Postulantes {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
+
+    public int getFoto() {
+        return foto;
+    }
+
+    public void setFoto(int foto) {
+        this.foto = foto;
+    }
+
 }

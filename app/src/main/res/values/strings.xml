@@ -14,6 +14,7 @@
     <string name="ad_tvNombre">Nombre</string>
     <string name="ad_tvTelefono">Teléfono</string>
     <string name="ad_tvCorreo">Correo</string>
+    <string name="da_contactar">El postulante ha sido contactado. Seleccone otro.</string>
 
     <string-array name="arrPlanetas">
         <item>Mercurio</item>

@@ -7,9 +7,15 @@ import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+
 
 public class DetalleActivity extends AppCompatActivity {
 
@@ -17,10 +23,17 @@ public class DetalleActivity extends AppCompatActivity {
     TextView tvTelefono;
     TextView tvCorreo;
 
+    ImageButton ibContactar;
+    ImageButton ibOcultar;
+    ImageButton ibPreguntar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle);
+
+        Toolbar actionBar = (Toolbar) findViewById(R.id.actionBar);
+        setSupportActionBar(actionBar);
 
         Bundle parametros = getIntent().getExtras();
         String nombre = parametros.getString("nombre");
@@ -31,11 +44,18 @@ public class DetalleActivity extends AppCompatActivity {
         tvTelefono = (TextView) findViewById(R.id.tvTel);
         tvCorreo = (TextView) findViewById(R.id.tvCorreo);
 
-        Log.i("telefono", telefono);
+
+
+               Log.i("telefono", telefono);
 
         tvNombre.setText(nombre);
         tvCorreo.setText(correo);
         tvTelefono.setText(telefono);
+
+        consultar();
+
+
+
 
 
     }
@@ -66,4 +86,35 @@ public class DetalleActivity extends AppCompatActivity {
         itCorreo.setType("message/rfc822");
         startActivity(Intent.createChooser(itCorreo, "Correo-e"));
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK){
+            Intent itKd = new Intent(this, ListaActivity.class);
+            startActivity(itKd);
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    public void consultar() {
+        ibContactar = (ImageButton) findViewById(R.id.ibContactar);
+        ibOcultar = (ImageButton) findViewById(R.id.ibOcultar);
+        ibPreguntar = (ImageButton) findViewById(R.id.ibPreguntar);
+
+        ibContactar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(DetalleActivity.this, getResources().getString(R.string.da_contactar), Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(DetalleActivity.this, ListaActivity.class);
+                startActivity(intent);
+
+
+            }
+        });
+    }
+
 }
+
