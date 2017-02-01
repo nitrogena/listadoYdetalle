@@ -37,6 +37,14 @@
         android:layout_above="@+id/tvSubtitulo"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="58dp" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnVerPerfil"
+        android:text="@string/am_btnVerPerfil"
+        android:theme="@style/BotonRaised"
+        android:layout_below="@+id/btnConsultar"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

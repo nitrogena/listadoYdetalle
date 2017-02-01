@@ -1,6 +1,7 @@
 package mx.nitrogena.coursera.aplicacion;
 
 import android.content.Intent;
+import android.icu.text.IDNA;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,10 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
@@ -99,9 +104,17 @@ public class ListaActivity extends AppCompatActivity {
     }
 
     private void refrescar() {
+        /* SIN ADAPTADOR DE RECYCLER VIEW
         String[] arrPlanetas = getResources().getStringArray(R.array.arrPlanetas);
         lvPostulantes.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrPlanetas));
 
+        srlRefresh.setRefreshing(false);*/
+
+        //tratar con el intent a si mismo
+
+        Intent intent2 = new Intent(this, ListaActivity.class);
+
+        startActivity(intent2);
         srlRefresh.setRefreshing(false);
     }
 
@@ -122,4 +135,50 @@ public class ListaActivity extends AppCompatActivity {
         PostulanteAdapter paAdaptador = new PostulanteAdapter(arrPostulantes, this);
         rvListaPostulantes.setAdapter(paAdaptador);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_opcion_lista, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.moContactado:
+                refrescar();
+                break;
+            case R.id.moPendiente:
+                refrescar();
+                break;
+            case R.id.moOculto:
+                refrescar();
+                break;
+            case R.id.moNuevo:
+                refrescar();
+                break;
+
+            case R.id.moAcerca:
+                mostrarInformativo("acerca");
+                break;
+            case R.id.moCreditos:
+                mostrarInformativo("creditos");
+                break;
+            case R.id.moAvRefresh:
+                refrescar();
+                break;
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void mostrarInformativo(String strOpcion){
+
+        Intent intent = new Intent(this, InformativoActivity.class);
+        intent.putExtra("texto", strOpcion);
+        startActivity(intent);
+    }
+
+
 }

@@ -15,6 +15,22 @@
     <string name="ad_tvTelefono">Teléfono</string>
     <string name="ad_tvCorreo">Correo</string>
     <string name="da_contactar">El postulante ha sido contactado. Seleccone otro.</string>
+    <string name="mo_lista">Acerca de</string>
+    <string name="mo_configura">Configuración</string>
+    <string name="mo_listaContactado">Postulantes contactados</string>
+    <string name="mo_listaPendiente">Postulantes por contactar</string>
+    <string name="mo_listaOcultos">Postulantes ocultados</string>
+    <string name="mo_listaNuevo">Postulantes recientes</string>
+    <string name="ai_acercaDe">Aplicación realizada por la organización Right Monkey.</string>
+    <string name="ai_derechos">Todos los derechos reservados</string>
+    <string name="ai_Configura">Otro texto</string>
+    <string name="ai_Creditos">Texto de creditos</string>
+    <string name="mo_creditos">Créditos</string>
+    <string name="mc_contactar">Contactar</string>
+    <string name="mpu_Editar">Cambiar foto</string>
+    <string name="modPendiente">Dejar pendiente</string>
+    <string name="mod_ocultar">Ocultar</string>
+    <string name="mo_avRefresh">Refrescar</string>
 
     <string-array name="arrPlanetas">
         <item>Mercurio</item>
@@ -24,5 +40,9 @@
         <item>Jupiter</item>
         <item>Saturno</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="am_btnVerPerfil">Ver perfil</string>
 
 </resources>

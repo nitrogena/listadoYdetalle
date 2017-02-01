@@ -7,15 +7,22 @@ import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.appindexing.Thing;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 
 public class DetalleActivity extends AppCompatActivity {
@@ -28,9 +35,14 @@ public class DetalleActivity extends AppCompatActivity {
     ImageButton ibContactar;
     ImageButton ibOcultar;
     ImageButton ibPreguntar;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle);
 
@@ -52,9 +64,9 @@ public class DetalleActivity extends AppCompatActivity {
         tvTelefono = (TextView) findViewById(R.id.tvTel);
         tvCorreo = (TextView) findViewById(R.id.tvCorreo);
 
-          ivFoto = (ImageView) findViewById(R.id.ivFoto);
+        ivFoto = (ImageView) findViewById(R.id.ivFoto);
 
-               Log.i("telefono", telefono);
+        Log.i("telefono", telefono);
 
         tvNombre.setText(nombre);
         tvCorreo.setText(correo);
@@ -65,9 +77,9 @@ public class DetalleActivity extends AppCompatActivity {
         consultar();
 
 
-
-
-
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     public void llamarTel(View view) {
@@ -88,7 +100,7 @@ public class DetalleActivity extends AppCompatActivity {
 
     }
 
-    public void enviarCorreo(View view){
+    public void enviarCorreo(View view) {
         String correo = tvCorreo.getText().toString();
         Intent itCorreo = new Intent((Intent.ACTION_SEND));
         itCorreo.setData(Uri.parse("mailto:"));
@@ -100,7 +112,7 @@ public class DetalleActivity extends AppCompatActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
-        if (keyCode == KeyEvent.KEYCODE_BACK){
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
             Intent itKd = new Intent(this, ListaActivity.class);
             startActivity(itKd);
         }
@@ -125,6 +137,66 @@ public class DetalleActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void verMenuPopup(View view) {
+        ImageView ivFoto = (ImageView) findViewById(R.id.ivFoto);
+        PopupMenu pmPopupMenu = new PopupMenu(this, ivFoto);
+        pmPopupMenu.getMenuInflater().inflate(R.menu.menu_popup, pmPopupMenu.getMenu());
+
+        pmPopupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.mpuEditarFoto:
+                        Toast.makeText(getBaseContext(), getResources().getString(R.string.mpu_Editar), Toast.LENGTH_LONG).show();
+                        break;
+                }
+                return true;
+            }
+        });
+
+
+        pmPopupMenu.show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_opcion_detalle, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.modContactar:
+                //refrescar();
+                break;
+            case R.id.modPreguntar:
+                //refrescar();
+                break;
+            case R.id.modOcultar:
+                //refrescar();
+                break;
+
+            case R.id.moAcerca:
+                mostrarInformativo("acerca");
+                break;
+            case R.id.moCreditos:
+                mostrarInformativo("creditos");
+                break;
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void mostrarInformativo(String strOpcion){
+
+        Intent intent = new Intent(this, InformativoActivity.class);
+        intent.putExtra("texto", strOpcion);
+        startActivity(intent);
+    }
+
 
 }
 

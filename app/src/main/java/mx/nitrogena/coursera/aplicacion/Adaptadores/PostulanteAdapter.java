@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,9 @@ public class PostulanteAdapter extends RecyclerView.Adapter<PostulanteAdapter.Po
     @Override
     public PostulanteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View vwView = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_postulante, parent, false);
+
+
+
 
         return new PostulanteViewHolder(vwView);
     }
@@ -81,6 +85,11 @@ public class PostulanteAdapter extends RecyclerView.Adapter<PostulanteAdapter.Po
             tvNombreCV = (TextView) itemView.findViewById(R.id.tvNombreCV);
             tvTelCV = (TextView) itemView.findViewById(R.id.tvTelCV);
             tvCorreoCV = (TextView) itemView.findViewById(R.id.tvCorreoCV);
+
+
+
         }
     }
+
+
 }

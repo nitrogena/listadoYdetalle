@@ -28,7 +28,8 @@
         android:layout_height="@dimen/cv_ivPost_height"
         android:id="@+id/ivFoto"
         android:src="@drawable/persona_de_sexo_masculino_48"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:onClick="verMenuPopup"/>
 
     <TextView
         android:id="@+id/tvNombre"
