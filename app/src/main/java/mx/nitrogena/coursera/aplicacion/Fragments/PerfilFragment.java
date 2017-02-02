@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -32,6 +33,8 @@ import mx.nitrogena.coursera.aplicacion.R;
  */
 public class PerfilFragment extends Fragment {
 
+    private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
+    private static final int MY_PERMISSIONS_REQUEST_CAMERA = 2;
     TextView tvNombre;
     TextView tvTelefono;
     TextView tvCorreo;
@@ -92,6 +95,8 @@ public class PerfilFragment extends Fragment {
             }
         });
 
+        //editarFoto();
+
         return view;
     }
 
@@ -123,10 +128,6 @@ public class PerfilFragment extends Fragment {
         itCorreo.setType("message/rfc822");
         getActivity().startActivity(Intent.createChooser(itCorreo, "Correo-e"));
     }
-
-
-
-
 
 
 

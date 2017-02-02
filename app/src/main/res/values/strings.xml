@@ -2,7 +2,7 @@
     <string name="app_name">Aplicacion</string>
     <string name="am_tvTitulo">Aplicacion Ejemplo</string>
     <string name="am_tvSubtitulo">Bienvenido</string>
-    <string name="am_btnConsultar">Comenzar</string>
+    <string name="am_btnConsultar">Empleador Comenzar</string>
 
     <string name="am_onResume">onResume</string>
     <string name="am_onStart">onStart</string>
@@ -51,5 +51,6 @@
     <string name="mop_EditarFoto">Editar foto</string>
     <string name="mop_verCurriculum">Ver curriculum</string>
     <string name="Curriculum">Curriculum</string>
+    <string name="am_btnUsarCamara">Usar camara</string>
 
 </resources>

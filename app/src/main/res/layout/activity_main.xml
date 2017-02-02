@@ -11,32 +11,24 @@
         layout="@layout/action_bar">
     </include>
 
-    <Button
+    <TextView
+        android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnConsultar"
-        android:text="@string/am_btnConsultar"
-        android:theme="@style/BotonRaised"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:text="@string/am_tvTitulo"
+        android:layout_below="@+id/actionBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp" />
 
     <TextView
         android:id="@+id/tvSubtitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/am_tvSubtitulo"
-        android:layout_above="@+id/btnConsultar"
+        android:layout_below="@+id/tvTitulo"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="44dp" />
+        android:layout_marginTop="32dp" />
 
-    <TextView
-        android:id="@+id/tvTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/am_tvTitulo"
-        android:layout_above="@+id/tvSubtitulo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="58dp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,7 +36,32 @@
         android:text="@string/am_btnVerPerfil"
         android:theme="@style/BotonRaised"
         android:layout_below="@+id/btnConsultar"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnConsultar"
+        android:text="@string/am_btnConsultar"
+        android:theme="@style/BotonRaised"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/tvSubtitulo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="89dp"
+        android:layout_marginEnd="89dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnUsarCamara"
+        android:text="@string/am_btnUsarCamara"
+        android:theme="@style/BotonRaised"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/btnVerPerfil"
+        android:layout_alignRight="@+id/tvTitulo"
+        android:layout_alignEnd="@+id/tvTitulo" />
 
 
 </RelativeLayout>

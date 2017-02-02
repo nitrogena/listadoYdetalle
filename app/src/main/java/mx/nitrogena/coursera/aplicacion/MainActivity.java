@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         consultar();
         verPerfil();
 
+        usarCamara();
+
         Toast.makeText(this, getResources().getString(R.string.am_onCreate), Toast.LENGTH_SHORT).show();
     }
 
@@ -47,6 +49,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ListaActivity.class);
                 startActivity(intent);
+            }
+        });
+
+    }
+
+    private void usarCamara() {
+        Button btnUsarCamara = (Button) findViewById(R.id.btnUsarCamara);
+        btnUsarCamara.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent iPerfil = new Intent(MainActivity.this, CamaraActivity.class);
+                startActivity(iPerfil);
             }
         });
 
