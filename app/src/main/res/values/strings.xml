@@ -44,5 +44,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="am_btnVerPerfil">Ver perfil</string>
+    <string name="ad_tvTelefono_numero">55555555</string>
+    <string name="ad_tvCorreo_valor">nida@inventado.com</string>
+    <string name="mop_editarDatos">Editar datos</string>
+    <string name="mopEditarFoto">Editar foto</string>
+    <string name="mop_EditarFoto">Editar foto</string>
+    <string name="mop_verCurriculum">Ver curriculum</string>
 
 </resources>

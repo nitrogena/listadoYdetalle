@@ -74,7 +74,7 @@ public class DetalleActivity extends AppCompatActivity {
 
         ivFoto.setImageResource(foto);
 
-        consultar();
+        contactar();
 
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -119,7 +119,7 @@ public class DetalleActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-    public void consultar() {
+    public void contactar() {
         ibContactar = (ImageButton) findViewById(R.id.ibContactar);
         ibOcultar = (ImageButton) findViewById(R.id.ibOcultar);
         ibPreguntar = (ImageButton) findViewById(R.id.ibPreguntar);

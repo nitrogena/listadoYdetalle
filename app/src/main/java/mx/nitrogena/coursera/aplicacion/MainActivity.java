@@ -12,6 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     Button btnConsultar;
+    Button btnVerPerfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +23,21 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(actionBar);
 
         consultar();
+        verPerfil();
 
         Toast.makeText(this, getResources().getString(R.string.am_onCreate), Toast.LENGTH_SHORT).show();
+    }
+
+    private void verPerfil() {
+        btnVerPerfil = (Button) findViewById(R.id.btnVerPerfil);
+        btnVerPerfil.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent iPerfil = new Intent(MainActivity.this, PerfilActivity.class);
+                startActivity(iPerfil);
+            }
+        });
+
     }
 
     public void consultar(){
