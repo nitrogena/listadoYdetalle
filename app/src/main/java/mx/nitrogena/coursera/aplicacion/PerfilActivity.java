@@ -66,6 +66,9 @@ public class PerfilActivity extends AppCompatActivity {
     private void setUpViewPager() {
         vpPerfil.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
         tlTab.setupWithViewPager(vpPerfil);
+        tlTab.getTabAt(0).setIcon(R.drawable.ic_profile);
+        tlTab.getTabAt(1).setIcon(R.drawable.ic_curriculum);
+
     }
 
     public void verMenuPopup(View view) {
