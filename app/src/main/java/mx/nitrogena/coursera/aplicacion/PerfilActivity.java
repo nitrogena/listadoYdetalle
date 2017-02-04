@@ -3,7 +3,11 @@ package mx.nitrogena.coursera.aplicacion;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -26,6 +30,7 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import mx.nitrogena.coursera.aplicacion.Adaptadores.PageAdapter;
@@ -38,7 +43,10 @@ public class PerfilActivity extends AppCompatActivity {
     private TabLayout tlTab;
     private ViewPager vpPerfil;
 
+    private ImageView ivFoto;
 
+    private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
+    private static final int MY_PERMISSIONS_REQUEST_CAMERA = 2;
 
 
     @Override
@@ -76,15 +84,77 @@ public class PerfilActivity extends AppCompatActivity {
     }
 
     public void verMenuPopup(View view) {
-        ImageView ivFoto = (ImageView) view.findViewById(R.id.ivFoto);
+        ivFoto = (ImageView) view.findViewById(R.id.ivFoto);
         PopupMenu pmPopupMenu = new PopupMenu(this, ivFoto);
         pmPopupMenu.getMenuInflater().inflate(R.menu.menu_popup, pmPopupMenu.getMenu());
+
+        /*camara empieza*/
+        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int permissionCheck2 = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+
+        //revisar el estatus del permiso
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+
+            //Soliicitar permiso
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)){
+
+                //El permiso ya fue otorgado previamente
+                Toast.makeText(this, R.string.mensaje1_camara, Toast.LENGTH_SHORT).show();
+
+            }else{
+
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+
+            }
+        }
+        if (permissionCheck2 != PackageManager.PERMISSION_GRANTED) {
+
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.CAMERA)) {
+                //El permiso ya fue otorgado previamente
+                Toast.makeText(this, R.string.mensaje1_camara, Toast.LENGTH_SHORT).show();
+
+            }else{
+
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA},
+                        MY_PERMISSIONS_REQUEST_CAMERA);
+
+            }
+        }
+
+        /*camara finaliza*/
 
         pmPopupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.mpuEditarFoto:
+                    case R.id.mpuEditarFotoCam:
+                        Toast.makeText(getBaseContext(), getResources().getString(R.string.mpu_Editar), Toast.LENGTH_LONG).show();
+
+                        /*camara empieza*/
+
+                        //Creamos el Intent para llamar a la Camara
+                        Intent cameraIntent = new Intent(
+                                android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                        //Creamos una carpeta en la memeria del terminal
+                        File imagesFolder = new File(
+                                Environment.getExternalStorageDirectory(), "Tutorialeshtml5");
+                        imagesFolder.mkdirs();
+                        //añadimos el nombre de la imagen
+                        File image = new File(imagesFolder, "foto.jpg");
+                        Uri uriSavedImage = Uri.fromFile(image);
+                        //Le decimos al Intent que queremos grabar la imagen
+                        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedImage);
+                        //Lanzamos la aplicacion de la camara con retorno (forResult)
+                        startActivityForResult(cameraIntent, 1);
+
+                        /*camara finaliza*/
+
+
+                        break;
+                    case R.id.mpuEditarFotoGal:
                         Toast.makeText(getBaseContext(), getResources().getString(R.string.mpu_Editar), Toast.LENGTH_LONG).show();
                         break;
                 }
@@ -132,6 +202,52 @@ public class PerfilActivity extends AppCompatActivity {
         Intent intent = new Intent(this, InformativoActivity.class);
         intent.putExtra("texto", strOpcion);
         startActivity(intent);
+    }
+
+    /*camara empieza*/
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //Comprovamos que la foto se a realizado
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            //Creamos un bitmap con la imagen recientemente
+            //almacenada en la memoria
+            Bitmap bMap = BitmapFactory.decodeFile(
+                    Environment.getExternalStorageDirectory()+
+                            "/Tutorialeshtml5/"+"foto.jpg");
+            //Añadimos el bitmap al imageView para
+            //mostrarlo por pantalla
+            ivFoto.setImageBitmap(bMap);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //External storage activado
+                    Toast.makeText(this, R.string.mensaje2_camara, Toast.LENGTH_SHORT).show();
+
+                } else {
+                    //¿sin permiso external storage?
+                    Toast.makeText(this, R.string.mensaje3_camara, Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+            case MY_PERMISSIONS_REQUEST_CAMERA: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //camara activado
+                    Toast.makeText(this, R.string.mensaje4_camara, Toast.LENGTH_SHORT).show();
+                } else {
+                    //¿sin permiso camara?
+                    Toast.makeText(this, R.string.mensaje5_camara, Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+        }
     }
 
 

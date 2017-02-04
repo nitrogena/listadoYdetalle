@@ -52,5 +52,12 @@
     <string name="mop_verCurriculum">Ver curriculum</string>
     <string name="Curriculum">Curriculum</string>
     <string name="am_btnUsarCamara">Usar camara</string>
+    <string name="mensaje1_camara">El permiso ya fue otorgado previamente</string>
+    <string name="mensaje2_camara">External storage activado</string>
+    <string name="mensaje3_camara">¿sin permiso external storage?</string>
+    <string name="mensaje4_camara">Cámara activada</string>
+    <string name="mensaje5_camara">¿sin permiso camara?</string>
+    <string name="mpu_EditFotoCamara">Obtener foto cámara</string>
+    <string name="mpu_EditFotoGaleria">Obtener foto galería</string>
 
 </resources>

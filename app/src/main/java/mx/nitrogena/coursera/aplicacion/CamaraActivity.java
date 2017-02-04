@@ -19,6 +19,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class CamaraActivity extends AppCompatActivity {
 
@@ -37,33 +38,33 @@ public class CamaraActivity extends AppCompatActivity {
         int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         int permissionCheck2 = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
 
+        //revisar el estatus del permiso
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
 
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {
-
+            //Soliicitar permiso
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)){
 
-            } else {
+                //El permiso ya fue otorgado previamente
+                Toast.makeText(this, R.string.mensaje1_camara, Toast.LENGTH_SHORT).show();
 
-                ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+            }else{
+
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                         MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
 
             }
         }
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.CAMERA)
-                != PackageManager.PERMISSION_GRANTED) {
+        if (permissionCheck2 != PackageManager.PERMISSION_GRANTED) {
 
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                     Manifest.permission.CAMERA)) {
+                //El permiso ya fue otorgado previamente
+                Toast.makeText(this, R.string.mensaje1_camara, Toast.LENGTH_SHORT).show();
 
-            } else {
+            }else{
 
-                ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.CAMERA},
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA},
                         MY_PERMISSIONS_REQUEST_CAMERA);
 
             }
@@ -117,18 +118,24 @@ public class CamaraActivity extends AppCompatActivity {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //External storage activado
+                    Toast.makeText(this, R.string.mensaje2_camara, Toast.LENGTH_SHORT).show();
 
                 } else {
-
+                    //¿sin permiso external storage?
+                    Toast.makeText(this, R.string.mensaje3_camara, Toast.LENGTH_SHORT).show();
                 }
                 return;
-            } case MY_PERMISSIONS_REQUEST_CAMERA: {
+            }
+            case MY_PERMISSIONS_REQUEST_CAMERA: {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
+                    //camara activado
+                    Toast.makeText(this, R.string.mensaje4_camara, Toast.LENGTH_SHORT).show();
                 } else {
-
+                    //¿sin permiso camara?
+                    Toast.makeText(this, R.string.mensaje5_camara, Toast.LENGTH_SHORT).show();
                 }
                 return;
             }

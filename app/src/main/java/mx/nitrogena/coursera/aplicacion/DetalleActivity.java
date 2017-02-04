@@ -147,7 +147,7 @@ public class DetalleActivity extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.mpuEditarFoto:
+                    case R.id.mpuEditarFotoCam:
                         Toast.makeText(getBaseContext(), getResources().getString(R.string.mpu_Editar), Toast.LENGTH_LONG).show();
                         break;
                 }
