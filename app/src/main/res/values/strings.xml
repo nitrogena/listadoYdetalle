@@ -59,5 +59,12 @@
     <string name="mensaje5_camara">¿sin permiso camara?</string>
     <string name="mpu_EditFotoCamara">Obtener foto cámara</string>
     <string name="mpu_EditFotoGaleria">Obtener foto galería</string>
+    <string name="ar_titulo">Registro</string>
+    <string name="ar_descripcion">Complete los siguientes datos:</string>
+    <string name="ar_empresa">Empresa</string>
+    <string name="ar_sector">Sector</string>
+    <string name="ar_btnRegistrar">Registrar</string>
+    <string name="ra_mensaje1">Registro guardado</string>
+    <string name="ra_mensajeE">Lo sentimos. Por el momento no se le puede registrar.</string>
 
 </resources>

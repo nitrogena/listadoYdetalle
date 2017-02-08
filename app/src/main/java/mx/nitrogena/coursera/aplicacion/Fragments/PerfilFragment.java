@@ -33,8 +33,7 @@ import mx.nitrogena.coursera.aplicacion.R;
  */
 public class PerfilFragment extends Fragment {
 
-    private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
-    private static final int MY_PERMISSIONS_REQUEST_CAMERA = 2;
+
     TextView tvNombre;
     TextView tvTelefono;
     TextView tvCorreo;

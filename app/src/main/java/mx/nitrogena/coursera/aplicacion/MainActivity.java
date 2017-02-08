@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
         btnConsultar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ListaActivity.class);
+                //Intent intent = new Intent(MainActivity.this, ListaActivity.class);
+                Intent intent = new Intent(MainActivity.this, RegistroActivity.class);
                 startActivity(intent);
             }
         });

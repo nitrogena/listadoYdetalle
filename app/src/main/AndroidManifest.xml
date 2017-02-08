@@ -38,7 +38,8 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".PerfilActivity" />
-        <activity android:name=".CamaraActivity"></activity>
+        <activity android:name=".CamaraActivity" />
+        <activity android:name=".RegistroActivity"></activity>
     </application>
 
 </manifest>

@@ -35,11 +35,9 @@ public class DetalleActivity extends AppCompatActivity {
     ImageButton ibContactar;
     ImageButton ibOcultar;
     ImageButton ibPreguntar;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
+
+    private static final int MY_PERMISSIONS_REQUEST_CALL = 0x2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,28 +75,64 @@ public class DetalleActivity extends AppCompatActivity {
         contactar();
 
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     public void llamarTel(View view) {
         String telefono = tvTelefono.getText().toString();
         //Intent implicito
+
+
+        Log.i("telefonoLlamar", telefono);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: consider calling
+            // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
             //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
+
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CALL_PHONE)) {
+
+                //This is called if user has denied the permission before
+                //In this case I am just asking the permission again
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST_CALL);
+
+            } else {
+
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST_CALL);
+            }
             return;
         }
-        Log.i("telefonoLlamar", telefono);
         startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + telefono)));
 
+        /*Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:" + telefono ));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            startActivity(callIntent);
+        }
+        */
+
     }
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_CALL: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //External storage activado
+                    Toast.makeText(this, R.string.mensaje2_camara, Toast.LENGTH_SHORT).show();
+
+                } else {
+                    //¿sin permiso external storage?
+                    Toast.makeText(this, R.string.mensaje3_camara, Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+        }
+    }
+
 
     public void enviarCorreo(View view) {
         String correo = tvCorreo.getText().toString();
