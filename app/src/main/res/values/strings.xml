@@ -2,7 +2,7 @@
     <string name="app_name">Aplicacion</string>
     <string name="am_tvTitulo">Aplicacion Ejemplo</string>
     <string name="am_tvSubtitulo">Bienvenido</string>
-    <string name="am_btnConsultar">Empleador Comenzar</string>
+    <string name="am_btnConsultar">Comenzar Módulo Empleador</string>
 
     <string name="am_onResume">onResume</string>
     <string name="am_onStart">onStart</string>
@@ -13,7 +13,7 @@
     <string name="am_onCreate">onCreate</string>
     <string name="ad_tvNombre">Nombre</string>
     <string name="ad_tvTelefono">Teléfono</string>
-    <string name="ad_tvCorreo">Correo</string>
+    <string name="ad_tvCorreo">Correo electrónico</string>
     <string name="da_contactar">El postulante ha sido contactado. Seleccone otro.</string>
     <string name="mo_lista">Acerca de</string>
     <string name="mo_configura">Configuración</string>
@@ -24,7 +24,7 @@
     <string name="ai_acercaDe">Aplicación realizada por la organización Right Monkey.</string>
     <string name="ai_derechos">Todos los derechos reservados</string>
     <string name="ai_Configura">Otro texto</string>
-    <string name="ai_Creditos">Texto de creditos</string>
+    <string name="ai_Creditos">Texto de créditos</string>
     <string name="mo_creditos">Créditos</string>
     <string name="mc_contactar">Contactar</string>
     <string name="mpu_Editar">Cambiar foto</string>
@@ -45,13 +45,13 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="am_btnVerPerfil">Ver perfil</string>
     <string name="ad_tvTelefono_numero">55555555</string>
-    <string name="ad_tvCorreo_valor">nida@inventado.com</string>
+    <string name="ad_tvCorreo_valor">nidia@inventado.com</string>
     <string name="mop_editarDatos">Editar datos</string>
     <string name="mopEditarFoto">Editar foto</string>
     <string name="mop_EditarFoto">Editar foto</string>
     <string name="mop_verCurriculum">Ver curriculum</string>
     <string name="Curriculum">Curriculum</string>
-    <string name="am_btnUsarCamara">Usar camara</string>
+    <string name="am_btnUsarCamara">Usar cámara</string>
     <string name="mensaje1_camara">El permiso ya fue otorgado previamente</string>
     <string name="mensaje2_camara">External storage activado</string>
     <string name="mensaje3_camara">¿sin permiso external storage?</string>
@@ -59,12 +59,38 @@
     <string name="mensaje5_camara">¿sin permiso camara?</string>
     <string name="mpu_EditFotoCamara">Obtener foto cámara</string>
     <string name="mpu_EditFotoGaleria">Obtener foto galería</string>
+
     <string name="ar_titulo">Registro</string>
     <string name="ar_descripcion">Complete los siguientes datos:</string>
     <string name="ar_empresa">Empresa</string>
     <string name="ar_sector">Sector</string>
     <string name="ar_btnRegistrar">Registrar</string>
     <string name="ra_mensaje1">Registro guardado</string>
-    <string name="ra_mensajeE">Lo sentimos. Por el momento no se le puede registrar.</string>
+    <string name="ra_mensajeE">Lo sentimos, por el momento no se  pueden registrar sus datos.</string>
+    <string name="ra_mensaje2">Se ha creado la preferencia</string>
+    <string name="ad_tvVacante">Vacante</string>
+    <string name="ad_tvDesc">Descripción</string>
+    <string name="title_activity_login">Inciair sesión</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="aa_contrasenia">Contraseña</string>
+    <string name="aa_btnIngresar">Ingresar</string>
+    <string name="aa_msgError">Los datos son incorrectos. Por favor, verifíquelos.</string>
+    <string name="aa_preguntaRegistrar">Usuario no encontrado. ¿Desea registrarse con estos datos?</string>
+    <string name="aa_msgErrorContrasenia">La contraseña no es válida. Por favor, ingrésela nuevamente.</string>
+    <string name="aa_msgErrorRequerido">Este campo es requerido. Por favor, ingréselo.</string>
+    <string name="aa_msgErrorCorreo">El correo no es válido. Por favor, ingréselo nuevamente.</string>
+    <string name="aa_btnLimpiar">Limpiar</string>
 
 </resources>

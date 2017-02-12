@@ -10,4 +10,6 @@
     <dimen name="actionBar">4dp</dimen>
     <dimen name="ar_titulo">24dp</dimen>
     <dimen name="ar_texto">20dp</dimen>
+    <dimen name="aa_layout_marginBottom">8dp</dimen>
+    <dimen name="aa_layout_marginTop">16dp</dimen>
 </resources>
