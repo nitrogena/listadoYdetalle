@@ -46,10 +46,8 @@
         <activity android:name=".CamaraActivity" />
         <activity android:name=".RegistroActivity" />
         <activity android:name=".VacanteActivity" />
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name=".AutenticaActivity"></activity>
+        <activity android:name=".AutenticaActivity" />
+        <activity android:name=".DescripcionActivity"></activity>
     </application>
 
 </manifest>

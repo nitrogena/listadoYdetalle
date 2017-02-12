@@ -2,18 +2,22 @@ package mx.nitrogena.coursera.aplicacion.Adaptadores;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import mx.nitrogena.coursera.aplicacion.Datos.Vacantes;
+import mx.nitrogena.coursera.aplicacion.DescripcionActivity;
 import mx.nitrogena.coursera.aplicacion.DetalleActivity;
+import mx.nitrogena.coursera.aplicacion.Fragments.DescripcionFragment;
 import mx.nitrogena.coursera.aplicacion.R;
 
 /**
@@ -45,24 +49,36 @@ public class VacanteAdapter extends RecyclerView.Adapter<VacanteAdapter.VacanteV
             vvhHolder.tvTelCV.setText(vsVacante.getTelefono());
             vvhHolder.tvCorreoCV.setText(vsVacante.getCorreo());
             vvhHolder.tvDescCV.setText(vsVacante.getDescripcion());
-            /*
-            vvhHolder.ivFotoCV.setOnClickListener(new View.OnClickListener(){
+
+
+            vvhHolder.llCv.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view) {
 
                     Toast.makeText(activity, vsVacante.getVacante(), Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(activity, DetalleActivity.class);
-                    intent.putExtra("vacante", vsVacante.getVacante());
+                    Intent intent = new Intent(activity, DescripcionActivity.class);
+                    /**/intent.putExtra("vacante", vsVacante.getVacante());
                     intent.putExtra("telefono", vsVacante.getTelefono());
                     intent.putExtra("correo", vsVacante.getCorreo());
                     //intent.putExtra("foto", vsVacante.getFoto());
                     intent.putExtra("descripcion", vsVacante.getDescripcion());
-
+/**/
                     activity.startActivity(intent);
+
+                    /*Bundle bundle = new Bundle();
+                    bundle.putString("vacante", vsVacante.getVacante());
+                    bundle.putString("telefono", vsVacante.getTelefono());
+                    bundle.putString("correo", vsVacante.getCorreo());
+                    bundle.putString("descripcion", vsVacante.getDescripcion());
+                    DescripcionFragment myfragment = new DescripcionFragment();
+                    myfragment.setArguments(bundle);
+                    Intent intent = new Intent(activity, DescripcionActivity.class);
+                    activity.startActivity(intent);*/
+
                 }
             });
-         */
+
         }
 
         @Override
@@ -77,6 +93,7 @@ public class VacanteAdapter extends RecyclerView.Adapter<VacanteAdapter.VacanteV
             private TextView tvTelCV;
             private TextView tvCorreoCV;
             private TextView tvDescCV;
+            private LinearLayout llCv;
 
             public VacanteViewHolder(View itemView) {
                 super(itemView);
@@ -86,7 +103,7 @@ public class VacanteAdapter extends RecyclerView.Adapter<VacanteAdapter.VacanteV
                 tvCorreoCV = (TextView) itemView.findViewById(R.id.tvCorreoCV);
                 tvDescCV = (TextView) itemView.findViewById(R.id.tvDescCV);
 
-
+                llCv = (LinearLayout) itemView.findViewById(R.id.cv_ll);
 
             }
         }

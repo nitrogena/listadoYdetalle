@@ -87,39 +87,42 @@ public class VacanteActivity extends AppCompatActivity {
     }
 
     public void inicializarAdaptador(){
-        VacanteAdapter paAdaptador = new VacanteAdapter(arrVacantes, this);
-        rvListaVacantes.setAdapter(paAdaptador);
+        VacanteAdapter vaAdaptador = new VacanteAdapter(arrVacantes, this);
+        rvListaVacantes.setAdapter(vaAdaptador);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_opcion_lista, menu);
+        getMenuInflater().inflate(R.menu.menu_opcion_vacante, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.moContactado:
+            case R.id.movAgregar:
                 refrescar();
                 break;
-            case R.id.moPendiente:
+            case R.id.movTodasVacantes:
                 refrescar();
                 break;
-            case R.id.moOculto:
+            case R.id.movVacantesDisponibles:
                 refrescar();
                 break;
-            case R.id.moNuevo:
+            case R.id.movVacantesOcupadas:
                 refrescar();
                 break;
 
+            case R.id.movVacantesSinPostulantes:
+                mostrarInformativo("acerca");
+                break;
             case R.id.moAcerca:
                 mostrarInformativo("acerca");
                 break;
             case R.id.moCreditos:
                 mostrarInformativo("creditos");
                 break;
-            case R.id.moAvRefresh:
+            case R.id.movAvRefresh:
                 refrescar();
                 break;
 
