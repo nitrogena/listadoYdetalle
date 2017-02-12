@@ -46,8 +46,14 @@
         <activity android:name=".CamaraActivity" />
         <activity android:name=".RegistroActivity" />
         <activity android:name=".VacanteActivity" />
+        <activity
+            android:name=".DescripcionActivity"
+            android:parentActivityName=".VacanteActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".VacanteActivity" />
+        </activity>
         <activity android:name=".AutenticaActivity" />
-        <activity android:name=".DescripcionActivity"></activity>
     </application>
 
 </manifest>

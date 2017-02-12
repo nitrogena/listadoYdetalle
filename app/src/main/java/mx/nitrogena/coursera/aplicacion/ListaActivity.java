@@ -43,6 +43,7 @@ public class ListaActivity extends AppCompatActivity {
         Toolbar actionBar = (Toolbar) findViewById(R.id.actionBar);
         setSupportActionBar(actionBar);
 
+
         rvListaPostulantes = (RecyclerView) findViewById(R.id.rvPostulante);
 
         LinearLayoutManager llmLayout = new LinearLayoutManager(this);

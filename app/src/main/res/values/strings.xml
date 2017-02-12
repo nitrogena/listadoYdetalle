@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Aplicacion</string>
-    <string name="am_tvTitulo">Aplicacion Ejemplo</string>
+    <string name="app_name">Módulo Empleador</string>
+    <string name="am_tvTitulo">Prototipo módulo empleador</string>
     <string name="am_tvSubtitulo">Bienvenido</string>
-    <string name="am_btnConsultar">Comenzar Módulo Empleador</string>
+    <string name="am_btnConsultar">Comenzar</string>
 
     <string name="am_onResume">onResume</string>
     <string name="am_onStart">onStart</string>

@@ -54,6 +54,7 @@ public class DescripcionActivity extends AppCompatActivity {
         Toolbar actionBar = (Toolbar) findViewById(R.id.abPerfil);
         setSupportActionBar(actionBar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //tbToolbar = (Toolbar) findViewById(R.id.tbToolbar);
 
         tlTab = (TabLayout) findViewById(R.id.tlTab);
