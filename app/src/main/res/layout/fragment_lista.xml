@@ -3,6 +3,16 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fp_tvTitulo"
+        android:text="@string/fp_tvTitulo"
+        android:textAlignment="center"
+        android:textSize="@dimen/ar_titulo"
+        android:layout_marginBottom="@dimen/aa_layout_marginBottom"
+        />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvPostulante"
         android:layout_width="match_parent"

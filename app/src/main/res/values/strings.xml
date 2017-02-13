@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Módulo Empleador</string>
+    <string name="app_name">Prototipo Empleador</string>
     <string name="am_tvTitulo">Prototipo módulo empleador</string>
     <string name="am_tvSubtitulo">Bienvenido</string>
     <string name="am_btnConsultar">Comenzar</string>
@@ -22,7 +22,7 @@
     <string name="mo_listaOcultos">Postulantes ocultados</string>
     <string name="mo_listaNuevo">Postulantes recientes</string>
     <string name="ai_acercaDe">Aplicación realizada por la organización Right Monkey.</string>
-    <string name="ai_derechos">Todos los derechos reservados</string>
+    <string name="ai_derechos">Hecho en México. Todos los derechos reservados</string>
     <string name="ai_Configura">Otro texto</string>
     <string name="ai_Creditos">Texto de créditos</string>
     <string name="mo_creditos">Créditos</string>
@@ -61,7 +61,7 @@
     <string name="mpu_EditFotoGaleria">Obtener foto galería</string>
 
     <string name="ar_titulo">Registro</string>
-    <string name="ar_descripcion">Complete los siguientes datos:</string>
+    <string name="ar_descripcion">Complete su registro con los siguientes datos:</string>
     <string name="ar_empresa">Empresa</string>
     <string name="ar_sector">Sector</string>
     <string name="ar_btnRegistrar">Registrar</string>
@@ -100,5 +100,14 @@
     <string name="mod_verInteresados">Ver postulantes</string>
     <string name="mod_verSeleccionados">Ver seleccionados</string>
     <string name="fd_descripcion">Descripción</string>
+    <string name="aa_tvTitulo">Ingrese sus datos para iniciar sesión.</string>
+    <string name="ad_datosPostulante">Datos del postulante</string>
+    <string name="aa_tvTituloR">Inicio</string>
+    <string name="fd_tvTitulo">Descripción de la vacante</string>
+    <string name="fp_tvTitulo">Postulantes</string>
+    <string name="fp_datosPerfil">Perfil</string>
+    <string name="fd_tvDetalle">Detalle</string>
+    <string name="fd_descripcionEditar">Editar descripción</string>
+    <string name="ad_tvVacantes">Vacantes</string>
 
 </resources>

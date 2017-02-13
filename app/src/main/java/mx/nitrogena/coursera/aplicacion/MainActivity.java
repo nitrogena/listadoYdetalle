@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(actionBar);
 
         consultar();
-        verPerfil();
+        //verPerfil();
 
-        usarCamara();
+        //usarCamara();
 
         Toast.makeText(this, getResources().getString(R.string.am_onCreate), Toast.LENGTH_SHORT).show();
     }
-
+/*
     private void verPerfil() {
         btnVerPerfil = (Button) findViewById(R.id.btnVerPerfil);
         btnVerPerfil.setOnClickListener(new View.OnClickListener(){
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
+*/
     public void consultar(){
         btnConsultar = (Button) findViewById(R.id.btnConsultar);
         btnConsultar.setOnClickListener(new View.OnClickListener(){
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
+/*
     private void usarCamara() {
         Button btnUsarCamara = (Button) findViewById(R.id.btnUsarCamara);
         btnUsarCamara.setOnClickListener(new View.OnClickListener(){
@@ -67,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
+*/
+  /*
     @Override
     protected void onStart() {
         super.onStart();
@@ -111,4 +112,5 @@ public class MainActivity extends AppCompatActivity {
 
         Toast.makeText(this, getResources().getString(R.string.am_onDestroy), Toast.LENGTH_SHORT).show();
     }
+    */
 }

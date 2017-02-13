@@ -38,6 +38,14 @@
                 android:onClick="verMenuPopup"/>
 -->
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTitulo"
+                android:textSize="@dimen/ar_titulo"
+                android:text="@string/fd_tvTitulo"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/aa_layout_marginBottom"/>
+            <TextView
                 android:id="@+id/tvVacante"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

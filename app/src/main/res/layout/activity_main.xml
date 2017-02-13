@@ -28,7 +28,7 @@
         android:layout_below="@+id/tvTitulo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp" />
-
+<!--
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
         android:theme="@style/BotonRaised"
         android:layout_below="@+id/btnConsultar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp" />
+        android:layout_marginTop="27dp" />-->
 
     <Button
         android:layout_width="wrap_content"
@@ -45,23 +45,20 @@
         android:id="@+id/btnConsultar"
         android:text="@string/am_btnConsultar"
         android:theme="@style/BotonRaised"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="44dp"
         android:layout_below="@+id/tvSubtitulo"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="89dp"
-        android:layout_marginEnd="89dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnUsarCamara"
-        android:text="@string/am_btnUsarCamara"
-        android:theme="@style/BotonRaised"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/btnVerPerfil"
-        android:layout_alignRight="@+id/tvTitulo"
-        android:layout_alignEnd="@+id/tvTitulo" />
+        android:layout_centerHorizontal="true" />
+    <!--
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnUsarCamara"
+            android:text="@string/am_btnUsarCamara"
+            android:theme="@style/BotonRaised"
+            android:layout_marginTop="25dp"
+            android:layout_below="@+id/btnVerPerfil"
+            android:layout_alignRight="@+id/tvTitulo"
+            android:layout_alignEnd="@+id/tvTitulo" />-->
 
 
 </RelativeLayout>
