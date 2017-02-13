@@ -90,7 +90,6 @@ public class AutenticaActivity extends AppCompatActivity implements View.OnClick
         try{
 
             actvCorreo = (AutoCompleteTextView) findViewById(R.id.actvCorreo);
-            //populateAutoComplete();
             etContrasenia = (EditText) findViewById(R.id.etContrasenia);
 
 
@@ -104,7 +103,7 @@ public class AutenticaActivity extends AppCompatActivity implements View.OnClick
             editor.putString("contrasenia", strContrasenia);
             editor.commit();
 
-            Toast.makeText(this, R.string.ra_mensaje2, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.ra_mensajeRegistro, Toast.LENGTH_LONG).show();
 
             Intent intent = new Intent(AutenticaActivity.this, RegistroActivity.class);
             startActivity(intent);

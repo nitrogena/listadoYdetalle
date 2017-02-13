@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         //usarCamara();
 
-        Toast.makeText(this, getResources().getString(R.string.am_onCreate), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, getResources().getString(R.string.am_onCreate), Toast.LENGTH_SHORT).show();
     }
 /*
     private void verPerfil() {

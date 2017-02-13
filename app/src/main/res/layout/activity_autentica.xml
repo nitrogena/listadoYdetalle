@@ -42,7 +42,7 @@ tools:context="mx.nitrogena.coursera.aplicacion.AutenticaActivity">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvTitulo"
+                android:id="@+id/tvDescPant"
                 android:text="@string/aa_tvTitulo"
                 android:textSize="@dimen/ar_texto"
                 android:layout_gravity="center"/>
@@ -72,7 +72,7 @@ tools:context="mx.nitrogena.coursera.aplicacion.AutenticaActivity">
                     android:layout_height="wrap_content"
                     android:hint="@string/aa_contrasenia"
                     android:imeActionId="@+id/login"
-                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeActionLabel="@string/registrar"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
