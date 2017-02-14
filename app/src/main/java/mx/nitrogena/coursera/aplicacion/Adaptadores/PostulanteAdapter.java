@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,10 +36,6 @@ public class PostulanteAdapter extends RecyclerView.Adapter<PostulanteAdapter.Po
     @Override
     public PostulanteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View vwView = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_postulante, parent, false);
-
-
-
-
         return new PostulanteViewHolder(vwView);
     }
 
@@ -50,7 +47,8 @@ public class PostulanteAdapter extends RecyclerView.Adapter<PostulanteAdapter.Po
         pvhHolder.tvTelCV.setText(psPostulante.getTelefono());
         pvhHolder.tvCorreoCV.setText(psPostulante.getCorreo());
 
-        pvhHolder.ivFotoCV.setOnClickListener(new View.OnClickListener(){
+        //pvhHolder.ivFotoCV.setOnClickListener(new View.OnClickListener(){
+        pvhHolder.llCvP.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
 
@@ -78,6 +76,7 @@ public class PostulanteAdapter extends RecyclerView.Adapter<PostulanteAdapter.Po
         private TextView tvNombreCV;
         private TextView tvTelCV;
         private TextView tvCorreoCV;
+        private LinearLayout llCvP;
 
         public PostulanteViewHolder(View itemView) {
             super(itemView);
@@ -85,8 +84,7 @@ public class PostulanteAdapter extends RecyclerView.Adapter<PostulanteAdapter.Po
             tvNombreCV = (TextView) itemView.findViewById(R.id.tvNombreCV);
             tvTelCV = (TextView) itemView.findViewById(R.id.tvTelCV);
             tvCorreoCV = (TextView) itemView.findViewById(R.id.tvCorreoCV);
-
-
+            llCvP = (LinearLayout) itemView.findViewById(R.id.llCvP);
 
         }
     }

@@ -11,7 +11,7 @@
     <include android:id="@+id/actionBar"
         layout="@layout/action_bar">
     </include>
-    <TextView
+    <!--<TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/av_tvTitulo"
@@ -38,6 +38,11 @@
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
-
-
+-->
+    <FrameLayout
+        android:id="@+id/av_flVacantes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/actionBar">
+    </FrameLayout>
 </RelativeLayout>

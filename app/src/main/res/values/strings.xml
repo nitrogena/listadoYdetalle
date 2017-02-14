@@ -74,7 +74,6 @@
     <string name="registrar">Registrar</string>
 
 
-
     <string name="aa_contrasenia">Contraseña</string>
     <string name="aa_btnIngresar">Ingresar</string>
     <string name="aa_msgError">Los datos son incorrectos. Por favor, verifíquelos.</string>
@@ -95,11 +94,13 @@
     <string name="ad_datosPostulante">Datos del postulante</string>
     <string name="aa_tvTituloR">Inicio</string>
     <string name="fd_tvTitulo">Descripción de la vacante</string>
-    <string name="fp_tvTitulo">Postulantes</string>
+    <string name="fp_tvTitulo">Postulantes de la vacante</string>
     <string name="fp_datosPerfil">Perfil</string>
     <string name="fd_tvDetalle">Detalle</string>
-    <string name="fd_descripcionEditar">Editar descripción</string>
+    <string name="fd_descripcionEditar">Editar descripción de la vacante</string>
     <string name="ad_tvVacantes">Vacantes</string>
     <string name="ra_mensajeRegistro">El registro de un usuario nuevo se ha realizado</string>
+    <string name="cv_datosContacto">Datos del contacto:</string>
+    <string name="fd_masInfo">Más información:</string>
 
 </resources>

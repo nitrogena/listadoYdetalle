@@ -68,18 +68,7 @@ public class DescripcionActivity extends AppCompatActivity {
 
         Log.i("vacante", vacante);
 
-        /*Bundle bundle = new Bundle();
-        bundle.putString("vacante", vacante);
-        bundle.putString("telefono", telefono);
-        bundle.putString("correo", correo);
-        bundle.putString("descripcion", descripcion);
-        DescripcionFragment myfragment = new DescripcionFragment();
-        myfragment.setArguments(bundle);*/
-        //DescripcionFragment fragmentDemo = DescripcionFragment.newInstance(vacante, telefono, correo, descripcion);
-
         setUpViewPager(vacante, telefono, correo, descripcion);
-
-
     }
 
     //para usar el viewpager
@@ -98,8 +87,7 @@ public class DescripcionActivity extends AppCompatActivity {
         tlTab.getTabAt(0).setIcon(R.drawable.ic_profile);
         tlTab.getTabAt(1).setIcon(R.drawable.ic_curriculum);
         tlTab.getTabAt(2).setIcon(R.drawable.ic_profile);
-
-    }
+   }
 
     /*public void verMenuPopup(View view) {
         ivFoto = (ImageView) view.findViewById(ivFoto);
@@ -209,23 +197,14 @@ public class DescripcionActivity extends AppCompatActivity {
             case R.id.moCreditos:
                 mostrarInformativo("creditos");
                 break;
-
         }
-
         return super.onOptionsItemSelected(item);
     }
 
     public void mostrarInformativo(String strOpcion){
-
         Intent intent = new Intent(this, InformativoActivity.class);
         intent.putExtra("texto", strOpcion);
         startActivity(intent);
     }
-
-
-
-
-
-
 }
 

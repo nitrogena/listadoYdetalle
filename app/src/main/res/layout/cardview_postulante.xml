@@ -12,12 +12,13 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/llCvP">
         <ImageView
             android:layout_width="@dimen/cv_ivPost_width"
             android:layout_height="@dimen/cv_ivPost_height"
             android:id="@+id/ivFotoCV"
-            android:src="@drawable/persona_de_sexo_masculino_48" />
+            android:src="@drawable/pelo_mujer_48" />
 
         <LinearLayout
             android:layout_width="match_parent"

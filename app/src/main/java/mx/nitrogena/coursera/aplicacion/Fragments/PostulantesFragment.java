@@ -51,14 +51,9 @@ public class PostulantesFragment extends Fragment {
         LinearLayoutManager llmLayout = new LinearLayoutManager(getActivity());
         llmLayout.setOrientation(LinearLayoutManager.VERTICAL);
 
-        //GridLayoutManager glmLayout = new GridLayoutManager(this, 2);
-
         rvListaPostulantes.setLayoutManager(llmLayout);
-        InicializarListaPostulantes();
+        inicializarListaPostulantes();
         inicializarAdaptador();
-
-
-        GridLayoutManager glm = new GridLayoutManager(getActivity(), 2);
 
         srlRefresh = (SwipeRefreshLayout) view.findViewById(R.id.srlRefresh);
 
@@ -73,25 +68,17 @@ public class PostulantesFragment extends Fragment {
     }
 
     private void refrescar() {
-
-
         //Intent intent2 = new Intent(this, ListaActivity.class);
-
         //startActivity(intent2);
         srlRefresh.setRefreshing(false);
     }
 
-    public void InicializarListaPostulantes(){
-
+    public void inicializarListaPostulantes(){
         arrPostulantes = new ArrayList<Postulantes>();
-
         arrPostulantes.add(new Postulantes("Nidia Orduña", "77777777", "nidia@inventado.com", R.drawable.pelo_mujer_48));
-        arrPostulantes.add(new Postulantes("David Chávez", "88888888", "david@inventado.com", R.drawable.message_48));
+        arrPostulantes.add(new Postulantes("David Chávez", "88888888", "david@inventado.com", R.drawable.persona_de_sexo_masculino_48));
         arrPostulantes.add(new Postulantes("Luis Ezcurdia", "99999999", "luis@inventado.com", R.drawable.persona_de_sexo_masculino_48));
-        arrPostulantes.add(new Postulantes("Marduk Pérez", "66666666", "marduk@inventado.com", R.drawable.phone_48));
-
-
-
+        arrPostulantes.add(new Postulantes("Marduk Pérez", "66666666", "marduk@inventado.com", R.drawable.persona_de_sexo_masculino_48));
     }
 
     public void inicializarAdaptador(){

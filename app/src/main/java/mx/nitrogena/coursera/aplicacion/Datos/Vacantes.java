@@ -6,6 +6,7 @@ package mx.nitrogena.coursera.aplicacion.Datos;
 
 public class Vacantes {
 
+    private int id;
     private String vacante;
     private String telefono;
     private String correo;
@@ -48,5 +49,13 @@ public class Vacantes {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id){
+        this.id = id;
     }
 }

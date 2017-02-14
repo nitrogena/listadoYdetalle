@@ -24,6 +24,8 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import mx.nitrogena.coursera.aplicacion.Fragments.PostulantesFragment;
+
 
 public class DetalleActivity extends AppCompatActivity {
 
@@ -162,10 +164,12 @@ public class DetalleActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                enviarCorreo(view);
+
                 Toast.makeText(DetalleActivity.this, getResources().getString(R.string.da_contactar), Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(DetalleActivity.this, ListaActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(DetalleActivity.this, DescripcionActivity.class);
+                //startActivity(intent);
 
 
             }

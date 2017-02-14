@@ -52,6 +52,24 @@
                 android:text="@string/ad_tvVacante"
                 android:textSize="@dimen/ad_textSize_nombre"
                 android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvInfo"
+                android:text="@string/fd_masInfo"
+                android:textSize="@dimen/ad_textSize_otros"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDescripcion"
+                android:text="@string/fd_descripcion"
+                android:textSize="@dimen/ad_textSize_otros"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTexto"
+                android:text="@string/cv_datosContacto"
+                android:textSize="@dimen/ad_textSize_otros"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -114,12 +132,7 @@
                     android:id="@+id/ibOcultar"
                     android:src="@drawable/no_hay_entrada_48"/>
             </LinearLayout>-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvDescripcion"
-                android:text="@string/fd_descripcion"
-                android:textSize="@dimen/ad_textSize_otros"/>
+
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

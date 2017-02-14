@@ -34,6 +34,18 @@
                 android:textSize="@dimen/ad_textSize_nombre"
                 android:textStyle="bold"/>
             <TextView
+                android:id="@+id/tvDescCV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ad_tvDesc"
+                android:textSize="@dimen/ad_textSize_otros"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTexto"
+                android:text="@string/cv_datosContacto"
+                android:textSize="@dimen/ad_textSize_otros"/>
+            <TextView
                 android:id="@+id/tvTelCV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -45,12 +57,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/ad_tvCorreo"
                 android:textSize="@dimen/ad_textSize_otros"/>
-            <TextView
-                android:id="@+id/tvDescCV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ad_tvDesc"
-                android:textSize="@dimen/ad_textSize_otros"/>
+
         </LinearLayout>
 
     </LinearLayout>
