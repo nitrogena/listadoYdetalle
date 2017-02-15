@@ -1,5 +1,6 @@
 package mx.nitrogena.coursera.aplicacion;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -9,6 +10,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Adapter;
@@ -18,6 +20,7 @@ import java.util.ArrayList;
 
 import mx.nitrogena.coursera.aplicacion.Adaptadores.VacanteAdapter;
 import mx.nitrogena.coursera.aplicacion.Datos.Vacantes;
+import mx.nitrogena.coursera.aplicacion.Fragments.AgregarvacanteFragment;
 import mx.nitrogena.coursera.aplicacion.Fragments.VacantesFragment;
 import mx.nitrogena.coursera.aplicacion.vacantes.InterfaceVacante;
 import mx.nitrogena.coursera.aplicacion.vacantes.InterfaceVacantePresenter;
@@ -43,6 +46,7 @@ public class VacanteActivity extends AppCompatActivity{
         Toolbar actionBar = (Toolbar) findViewById(R.id.actionBar);
         setSupportActionBar(actionBar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //rvListaVacantes = (RecyclerView) findViewById(R.id.rvVacante);
         //ivpPresenter = new VacantePresenter(this, getBaseContext());
 
@@ -65,10 +69,7 @@ public class VacanteActivity extends AppCompatActivity{
         //finish();
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-// Replace the contents of the container with the new fragment
         ft.replace(R.id.av_flVacantes, new VacantesFragment());
-// or ft.add(R.id.your_placeholder, new FooFragment());
-// Complete the changes added above
         ft.commit();
     }
 
@@ -101,7 +102,12 @@ public class VacanteActivity extends AppCompatActivity{
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.movAgregar:
-                refrescar();
+                //refrescar();
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.av_flVacantes, new AgregarvacanteFragment());
+                ft.addToBackStack(null);
+                ft.commit();
+
                 break;
             case R.id.movTodasVacantes:
                 refrescar();
@@ -154,4 +160,6 @@ public class VacanteActivity extends AppCompatActivity{
     public void inicializarAdaptador(VacanteAdapter vaAdaptador) {
         rvListaVacantes.setAdapter(vaAdaptador);
     }*/
+
+
 }

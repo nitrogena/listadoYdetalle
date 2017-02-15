@@ -102,5 +102,9 @@
     <string name="ra_mensajeRegistro">El registro de un usuario nuevo se ha realizado</string>
     <string name="cv_datosContacto">Datos del contacto:</string>
     <string name="fd_masInfo">Más información:</string>
+    <string name="fav_titulo">Agregar vacante</string>
+    <string name="fav_descripcion">Ingrese los datos siguientes:</string>
+    <string name="fav_vacante">Vacante</string>
+    <string name="avf_vacanteReg">La vacante se registró</string>
 
 </resources>
