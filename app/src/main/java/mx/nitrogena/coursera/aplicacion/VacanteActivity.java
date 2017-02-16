@@ -44,9 +44,14 @@ public class VacanteActivity extends AppCompatActivity{
         setContentView(R.layout.activity_vacante);
 
         Toolbar actionBar = (Toolbar) findViewById(R.id.actionBar);
-        setSupportActionBar(actionBar);
 
+        setSupportActionBar(actionBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //((this)).getSupportActionBar().show();
+        //getSupportActionBar().show();
+
+
+
         //rvListaVacantes = (RecyclerView) findViewById(R.id.rvVacante);
         //ivpPresenter = new VacantePresenter(this, getBaseContext());
 

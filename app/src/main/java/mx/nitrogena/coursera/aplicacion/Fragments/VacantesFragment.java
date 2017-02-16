@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,9 @@ public class VacantesFragment extends Fragment implements InterfaceVacante {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_vacantes, container, false);
+
+
+
 
         rvListaVacantes = (RecyclerView) view.findViewById(R.id.rvVacante);
         ivpPresenter = new VacantePresenter(this, getContext());

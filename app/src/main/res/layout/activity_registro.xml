@@ -28,14 +28,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-    <TextView
+   <!-- <TextView
         android:text="@string/ar_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ar_tvTitulo"
         android:layout_gravity="center"
         android:textSize="@dimen/ar_titulo"
-        android:textAlignment="center"/>
+        android:textAlignment="center"/>-->
     <TextView
         android:text="@string/ar_descripcion"
         android:layout_width="match_parent"

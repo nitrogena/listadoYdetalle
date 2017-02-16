@@ -61,11 +61,11 @@
     <string name="mpu_EditFotoGaleria">Obtener foto galería</string>
 
     <string name="ar_titulo">Registro</string>
-    <string name="ar_descripcion">Complete su registro con los siguientes datos:</string>
+    <string name="ar_descripcion">Complete su registro:</string>
     <string name="ar_empresa">Empresa</string>
     <string name="ar_sector">Sector</string>
     <string name="ar_btnRegistrar">Registrar</string>
-    <string name="ra_mensaje1">El registro se ha completado</string>
+    <string name="ra_mensaje1">El registro se realizó</string>
     <string name="ra_mensajeE">Lo sentimos, por el momento no se  pueden registrar sus datos.</string>
     <string name="ra_mensaje2">Se ha creado la preferencia</string>
     <string name="ad_tvVacante">Vacante</string>
@@ -82,7 +82,7 @@
     <string name="aa_msgErrorRequerido">Este campo es requerido. Por favor, ingréselo.</string>
     <string name="aa_msgErrorCorreo">El correo no es válido. Por favor, ingréselo nuevamente.</string>
     <string name="aa_btnLimpiar">Limpiar</string>
-    <string name="mov_agregarVacante">Agregar vancante</string>
+    <string name="mov_agregarVacante">Agregar vacante</string>
     <string name="mov_TodasVacantes">Todas las vacantes</string>
     <string name="mov_VacantesOcupadas">Vacantes ocupadas</string>
     <string name="mov_vacantesDisponibles">Vacantes disponibles</string>
@@ -90,16 +90,16 @@
     <string name="mod_verInteresados">Ver postulantes</string>
     <string name="mod_verSeleccionados">Ver seleccionados</string>
     <string name="fd_descripcion">Descripción</string>
-    <string name="aa_tvTitulo">Ingrese sus datos para iniciar sesión.</string>
+    <string name="aa_tvTitulo">Ingrese sus datos.</string>
     <string name="ad_datosPostulante">Datos del postulante</string>
-    <string name="aa_tvTituloR">Inicio</string>
+    <string name="aa_tvTituloR">Iniciar sesión</string>
     <string name="fd_tvTitulo">Descripción de la vacante</string>
     <string name="fp_tvTitulo">Postulantes de la vacante</string>
     <string name="fp_datosPerfil">Perfil</string>
     <string name="fd_tvDetalle">Detalle</string>
     <string name="fd_descripcionEditar">Editar descripción de la vacante</string>
     <string name="ad_tvVacantes">Vacantes</string>
-    <string name="ra_mensajeRegistro">El registro de un usuario nuevo se ha realizado</string>
+    <string name="ra_mensajeRegistro">Se registró un nuevo usuario</string>
     <string name="cv_datosContacto">Datos del contacto:</string>
     <string name="fd_masInfo">Más información:</string>
     <string name="fav_titulo">Agregar vacante</string>

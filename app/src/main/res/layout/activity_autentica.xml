@@ -39,13 +39,13 @@ tools:context="mx.nitrogena.coursera.aplicacion.AutenticaActivity">
                 android:textSize="@dimen/ar_titulo"
                 android:layout_gravity="center"/>
 
-            <TextView
+           <!-- <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvDescPant"
                 android:text="@string/aa_tvTitulo"
                 android:textSize="@dimen/ar_texto"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"/>-->
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
