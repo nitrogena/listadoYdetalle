@@ -117,6 +117,7 @@ public class DetalleActivity extends AppCompatActivity {
         */
 
     }
+
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_CALL: {
@@ -179,14 +180,17 @@ public class DetalleActivity extends AppCompatActivity {
     public void verMenuPopup(View view) {
         ImageView ivFoto = (ImageView) findViewById(R.id.ivFoto);
         PopupMenu pmPopupMenu = new PopupMenu(this, ivFoto);
-        pmPopupMenu.getMenuInflater().inflate(R.menu.menu_popup, pmPopupMenu.getMenu());
+        pmPopupMenu.getMenuInflater().inflate(R.menu.menu_popup_detalle, pmPopupMenu.getMenu());
 
         pmPopupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.mpuEditarFotoCam:
-                        Toast.makeText(getBaseContext(), getResources().getString(R.string.mpu_Editar), Toast.LENGTH_LONG).show();
+                    case R.id.mpdCurriculum:
+                        Toast.makeText(getBaseContext(), getResources().getString(R.string.curriculum), Toast.LENGTH_LONG).show();
+                        break;
+                    case R.id.mpdContactar:
+                        Toast.makeText(getBaseContext(), getResources().getString(R.string.mc_contactar), Toast.LENGTH_LONG).show();
                         break;
                 }
                 return true;

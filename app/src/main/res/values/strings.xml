@@ -93,7 +93,7 @@
     <string name="aa_tvTitulo">Ingrese sus datos.</string>
     <string name="ad_datosPostulante">Datos del postulante</string>
     <string name="aa_tvTituloR">Iniciar sesión</string>
-    <string name="fd_tvTitulo">Descripción de la vacante</string>
+    <string name="fd_tvTitulo">Vacante</string>
     <string name="fp_tvTitulo">Postulantes de la vacante</string>
     <string name="fp_datosPerfil">Perfil</string>
     <string name="fd_tvDetalle">Detalle</string>
@@ -111,5 +111,18 @@
     <string name="avf_msgErrorDescripcion">La descripción debe ser mayor de 10 caracteres</string>
     <string name="avf_msgErrorTelefono">El teléfono no es válido</string>
     <string name="aa_btnCancelar">Cancelar</string>
+    <string name="tabVacDesc">Descripción</string>
+    <string name="tabVacPost">Interesados</string>
+    <string name="tabVacSelec">Elegidos</string>
+    <string name="mov_buscar">Buscar</string>
+    <string name="mov_filtrar">Filtrar</string>
+    <string name="mov_configuracion">Configuración</string>
+    <string name="mov_cuenta">Mi cuenta</string>
+    <string name="mod_publicar">Publicar vacante</string>
+    <string name="mod_desactivarVacante">Desactivar vacante</string>
+    <string name="mod_editar">Editar vacante</string>
+    <string name="mpd_verCurriculum">Ver curriculum</string>
+    <string name="curriculum">Curriculum visto</string>
+    <string name="contactado">Ha sido contactado</string>
 
 </resources>

@@ -75,7 +75,7 @@ public class DescripcionActivity extends AppCompatActivity {
     private ArrayList<Fragment> agregarFragments(String vacante, String telefono, String correo, String descripcion) {
         ArrayList<Fragment> arrLstFragment = new ArrayList<>();
         arrLstFragment.add(DescripcionFragment.newInstance(vacante, telefono, correo, descripcion));
-        arrLstFragment.add(new DescripcionEditarFragment());
+        arrLstFragment.add(new PostulantesFragment());
         arrLstFragment.add(new PostulantesFragment());
         return arrLstFragment;
     }
@@ -84,9 +84,13 @@ public class DescripcionActivity extends AppCompatActivity {
     private void setUpViewPager(String vacante, String telefono, String correo, String descripcion) {
         vpDescripcion.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments(vacante, telefono, correo, descripcion)));
         tlTab.setupWithViewPager(vpDescripcion);
-        tlTab.getTabAt(0).setIcon(R.drawable.ic_profile);
-        tlTab.getTabAt(1).setIcon(R.drawable.ic_curriculum);
-        tlTab.getTabAt(2).setIcon(R.drawable.ic_profile);
+        //tlTab.getTabAt(0).setIcon(R.drawable.ic_profile);
+        tlTab.getTabAt(0).setText(R.string.tabVacDesc);
+        //tlTab.getTabAt(1).setIcon(R.drawable.ic_curriculum);
+        tlTab.getTabAt(1).setText(R.string.tabVacPost);
+        ///tlTab.getTabAt(2).setIcon(R.drawable.ic_profile);
+        tlTab.getTabAt(2).setText(R.string.tabVacSelec);
+
    }
 
     /*public void verMenuPopup(View view) {

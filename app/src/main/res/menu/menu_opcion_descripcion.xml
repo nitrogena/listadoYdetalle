@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/modEditar"
-        android:title="@string/mop_editarDatos"
+        android:title="@string/mod_editar"
         android:orderInCategory="100">
 
     </item>
     <item
         android:id="@+id/modVerPostulantes"
-        android:title="@string/mod_verInteresados"
+        android:title="@string/mod_publicar"
         android:orderInCategory="101">
 
     </item>
     <item
         android:id="@+id/modVerCandidatos"
-        android:title="@string/mod_verSeleccionados"
+        android:title="@string/mod_desactivarVacante"
         android:orderInCategory="102">
 
     </item>
