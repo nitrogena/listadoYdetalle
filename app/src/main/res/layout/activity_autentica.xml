@@ -94,21 +94,22 @@ tools:context="mx.nitrogena.coursera.aplicacion.AutenticaActivity">
                 android:text="@string/aa_btnLimpiar"
                 android:layout_weight="1"
                 android:theme="@style/BotonRaised"
-
+android:visibility="invisible"
                 android:layout_gravity="center"/>
-                <Button
-                    android:id="@+id/btnIngresar"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/aa_layout_marginTop"
-                    android:text="@string/aa_btnIngresar"
 
-                    android:theme="@style/BotonRaised"
-
-                    android:layout_gravity="center"/>
 
             </LinearLayout>
+            <Button
+                android:id="@+id/btnIngresar"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/aa_layout_marginTop"
+                android:text="@string/aa_btnIngresar"
+
+                android:theme="@style/BotonRaised"
+
+                android:layout_gravity="center"/>
         </LinearLayout>
     </ScrollView>
 

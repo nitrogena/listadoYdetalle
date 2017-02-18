@@ -45,6 +45,32 @@
         android:textSize="@dimen/ar_texto"
         android:textAlignment="center"/>
 
+            <ImageView
+                android:layout_width="@dimen/cv_ivPost_width"
+                android:layout_height="@dimen/cv_ivPost_height"
+                android:id="@+id/ivFoto"
+                android:src="@drawable/persona_de_sexo_masculino_48"
+                android:layout_gravity="center_horizontal"
+                android:onClick="verMenuPopup"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/ad_marginTop"
+                android:layout_gravity="center">
+                <ImageView
+                    android:id="@+id/ivCorreo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/message_48"/>
+                <TextView
+                    android:id="@+id/tvCorreo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ad_tvCorreo_valor"
+                    android:textSize="@dimen/ad_textSize_otros"/>
+            </LinearLayout>
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/ar_tilEmpresa"
         android:layout_width="match_parent"
@@ -86,7 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/aa_layout_marginTop"
-            android:text="@string/aa_btnLimpiar"
+            android:text="@string/aa_btnCancelar"
             android:layout_weight="1"
             android:theme="@style/BotonRaised"
 

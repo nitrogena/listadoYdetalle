@@ -104,6 +104,7 @@ public class AgregarvacanteFragment extends Fragment {
             @Override
             public void onClick(View view2) {
                 if (!autenticar(view2)) {
+                    //showProgress(true);
                     String strVacante = etVacante.getText().toString();
                     String strDesc = etDescripcion.getText().toString();
                     String strCorreo = etCorreo.getText().toString();
@@ -201,7 +202,7 @@ public class AgregarvacanteFragment extends Fragment {
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            showProgress(true);
+            //showProgress(true);
             //isAutentica = new AutenticaActivity.IniciarSesion(strCorreo, strContrasenia);
             //isAutentica.execute((Void) null);
         }
