@@ -23,7 +23,7 @@
     </android.support.v7.widget.Toolbar>
 
 <ProgressBar
-    android:id="@+id/ar_pbProgress"
+    android:id="@+id/fav_pbProgress"
 
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
     android:visibility="gone" />
 
 <ScrollView
-    android:id="@+id/ar_svScroll"
+    android:id="@+id/fav_svScroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
@@ -131,7 +131,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/aa_layout_marginTop"
-                android:text="@string/aa_btnLimpiar"
+                android:text="@string/aa_btnCancelar"
                 android:layout_weight="1"
                 android:theme="@style/BotonRaised"
 
@@ -141,7 +141,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/aa_layout_marginTop"
-                android:text="@string/ar_btnRegistrar"
+                android:text="@string/ar_btnAceptar"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:theme="@style/BotonRaised"/>

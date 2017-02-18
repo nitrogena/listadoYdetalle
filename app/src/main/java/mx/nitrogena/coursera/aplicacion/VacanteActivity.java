@@ -28,7 +28,7 @@ import mx.nitrogena.coursera.aplicacion.vacantes.VacantePresenter;
 
 public class VacanteActivity extends AppCompatActivity{
 
-    SwipeRefreshLayout srlRefresh;
+    //SwipeRefreshLayout srlRefresh;
     Adapter adaptador;
 
     ListView lvVacantes;
@@ -46,10 +46,7 @@ public class VacanteActivity extends AppCompatActivity{
         Toolbar actionBar = (Toolbar) findViewById(R.id.actionBar);
 
         setSupportActionBar(actionBar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //((this)).getSupportActionBar().show();
-        //getSupportActionBar().show();
-
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         //rvListaVacantes = (RecyclerView) findViewById(R.id.rvVacante);
@@ -64,8 +61,8 @@ public class VacanteActivity extends AppCompatActivity{
         /*inicializarListaVacantes();
         inicializarAdaptador();*/
 
-        //srlRefresh = (SwipeRefreshLayout) findViewById(R.id.srlRefresh);
-        /*srlRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        /*srlRefresh = (SwipeRefreshLayout) findViewById(R.id.srlRefresh);
+        srlRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 refrescar();
@@ -81,7 +78,7 @@ public class VacanteActivity extends AppCompatActivity{
     private void refrescar() {
         Intent intent2 = new Intent(this, VacanteActivity.class);
         startActivity(intent2);
-        srlRefresh.setRefreshing(false);
+        //srlRefresh.setRefreshing(false);
     }
     /*presenter
         public void inicializarListaVacantes(){
@@ -131,6 +128,13 @@ public class VacanteActivity extends AppCompatActivity{
                 break;
             case R.id.moCreditos:
                 mostrarInformativo("creditos");
+                break;
+            case R.id.movAgregarV:
+                FragmentTransaction ftV = getSupportFragmentManager().beginTransaction();
+                ftV.replace(R.id.av_flVacantes, new AgregarvacanteFragment());
+                ftV.addToBackStack(null);
+                ftV.commit();
+
                 break;
             case R.id.movAvRefresh:
                 refrescar();

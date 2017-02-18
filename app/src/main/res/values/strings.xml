@@ -106,5 +106,10 @@
     <string name="fav_descripcion">Ingrese los datos siguientes:</string>
     <string name="fav_vacante">Vacante</string>
     <string name="avf_vacanteReg">La vacante se registró</string>
+    <string name="ar_btnAceptar">Aceptar</string>
+    <string name="avf_msgErrorVacante">La vacante no es válida</string>
+    <string name="avf_msgErrorDescripcion">La descripción debe ser mayor de 10 caracteres</string>
+    <string name="avf_msgErrorTelefono">El teléfono no es válido</string>
+    <string name="aa_btnCancelar">Cancelar</string>
 
 </resources>

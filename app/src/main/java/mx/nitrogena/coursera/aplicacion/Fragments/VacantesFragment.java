@@ -29,7 +29,7 @@ import mx.nitrogena.coursera.aplicacion.vacantes.VacantePresenter;
  */
 public class VacantesFragment extends Fragment implements InterfaceVacante {
 
-    SwipeRefreshLayout srlRefresh;
+   SwipeRefreshLayout srlRefresh;
     Adapter adaptador;
 
     ListView lvVacantes;
@@ -69,8 +69,8 @@ public class VacantesFragment extends Fragment implements InterfaceVacante {
     }
 
     private void refrescar() {
-        //Intent intent2 = new Intent(this, VacanteActivity.class);
-        //startActivity(intent2);
+        Intent intent2 = new Intent(getActivity(), VacanteActivity.class);
+        startActivity(intent2);
         srlRefresh.setRefreshing(false);
     }
     @Override

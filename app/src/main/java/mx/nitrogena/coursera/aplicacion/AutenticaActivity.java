@@ -29,16 +29,9 @@ public class AutenticaActivity extends AppCompatActivity implements View.OnClick
     private AutoCompleteTextView actvCorreo;
     private EditText etContrasenia;
     private View pbProgress;
-            //mProgressView
     private View svScroll;
-                    //mLoginFormView
     private Button btnIngresar;
-
     private IniciarSesion isAutentica = null;
-
-    /*private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "nidia@nidia.mx:Nidia123", "irania@irania.mx:Irania123"
-    };*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

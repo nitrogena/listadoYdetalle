@@ -43,9 +43,15 @@
 
         </item>
         <item
-            android:id="@+id/movAvRefresh"
-            android:title="@string/mo_avRefresh"
+            android:id="@+id/movAgregarV"
+            android:title="@string/mov_agregarVacante"
             android:orderInCategory="107"
             app:showAsAction="always"
-            android:icon="@drawable/refresh_filled_50"></item>
+            android:icon="@drawable/mas_48"></item>
+        <item
+            android:id="@+id/movAvRefresh"
+            android:title="@string/mo_avRefresh"
+            android:orderInCategory="108"
+            app:showAsAction="always"
+            android:icon="@drawable/actualizar_48"></item>
 </menu>
