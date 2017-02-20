@@ -42,7 +42,7 @@ public class ListaActivity extends AppCompatActivity {
 
         Toolbar actionBar = (Toolbar) findViewById(R.id.actionBar);
         setSupportActionBar(actionBar);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         rvListaPostulantes = (RecyclerView) findViewById(R.id.rvPostulante);
 
@@ -124,9 +124,9 @@ public class ListaActivity extends AppCompatActivity {
         arrPostulantes = new ArrayList<Postulantes>();
 
         arrPostulantes.add(new Postulantes("Nidia Orduña", "77777777", "nidia@inventado.com", R.drawable.pelo_mujer_48));
-        arrPostulantes.add(new Postulantes("David Chávez", "88888888", "david@inventado.com", R.drawable.message_48));
+        arrPostulantes.add(new Postulantes("David Chávez", "88888888", "david@inventado.com", R.drawable.persona_de_sexo_masculino_48));
         arrPostulantes.add(new Postulantes("Luis Ezcurdia", "99999999", "luis@inventado.com", R.drawable.persona_de_sexo_masculino_48));
-        arrPostulantes.add(new Postulantes("Marduk Pérez", "66666666", "marduk@inventado.com", R.drawable.phone_48));
+        arrPostulantes.add(new Postulantes("Marduk Pérez", "66666666", "marduk@inventado.com", R.drawable.persona_de_sexo_masculino_48));
 
 
 
@@ -165,9 +165,9 @@ public class ListaActivity extends AppCompatActivity {
             case R.id.moCreditos:
                 mostrarInformativo("creditos");
                 break;
-            case R.id.moAvRefresh:
+            /*case R.id.moAvRefresh:
                 refrescar();
-                break;
+                break;*/
 
         }
 

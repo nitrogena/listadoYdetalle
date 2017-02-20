@@ -38,10 +38,11 @@
         android:orderInCategory="105">
 
     </item>
-    <item
+    <!--<item
         android:id="@+id/moAvRefresh"
         android:title="@string/mo_avRefresh"
         android:orderInCategory="106"
         app:showAsAction="always"
-        android:icon="@drawable/refresh_filled_50"></item>
+        android:icon="@drawable/refresh_filled_50">
+     </item>-->
 </menu>

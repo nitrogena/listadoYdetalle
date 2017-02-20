@@ -5,7 +5,7 @@
 
     </item>
     <item android:id="@+id/mpdContactar"
-        android:title="@string/da_contactar">
+        android:title="@string/mc_contactar">
 
     </item>
 </menu>
