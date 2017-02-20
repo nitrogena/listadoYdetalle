@@ -60,6 +60,7 @@
                 android:value=".VacanteActivity" />
         </activity>
         <activity android:name=".AutenticaActivity" />
+        <activity android:name=".CreaActivity"></activity>
     </application>
 
 </manifest>

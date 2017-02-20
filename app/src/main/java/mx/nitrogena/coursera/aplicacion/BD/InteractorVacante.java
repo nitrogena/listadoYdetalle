@@ -26,7 +26,9 @@ public class InteractorVacante {
         arrVacantes.add(new Vacantes("Adminstrador de servidores", "66666666", "desapp@inventado.com", "Experiencia de 8 años"));
         */
         BaseDatos bdBase = new BaseDatos(contexto);
-        insertarVacantes(bdBase);
+        if (bdBase.obtenerTodasVacantes().size() == 0) {
+            insertarVacantes(bdBase);
+        }
         return bdBase.obtenerTodasVacantes();
 
     }

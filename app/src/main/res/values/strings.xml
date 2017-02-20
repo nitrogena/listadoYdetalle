@@ -78,9 +78,9 @@
     <string name="aa_btnIngresar">Ingresar</string>
     <string name="aa_msgError">Los datos son incorrectos. Por favor, verifíquelos.</string>
     <string name="aa_preguntaRegistrar">Usuario no encontrado. ¿Desea registrarse con estos datos?</string>
-    <string name="aa_msgErrorContrasenia">La contraseña no es válida. Por favor, ingrésela nuevamente.</string>
+    <string name="aa_msgErrorContrasenia">La contraseña debe ser mayor de 6 caracteres.</string>
     <string name="aa_msgErrorRequerido">Este campo es requerido. Por favor, ingréselo.</string>
-    <string name="aa_msgErrorCorreo">El correo no es válido. Por favor, ingréselo nuevamente.</string>
+    <string name="aa_msgErrorCorreo">El correo no es válido.</string>
     <string name="aa_btnLimpiar">Limpiar</string>
     <string name="mov_agregarVacante">Agregar vacante</string>
     <string name="mov_TodasVacantes">Todas las vacantes</string>
@@ -124,5 +124,9 @@
     <string name="mpd_verCurriculum">Ver curriculum</string>
     <string name="curriculum">Curriculum visto</string>
     <string name="contactado">Ha sido contactado</string>
+    <string name="aa_registrar">Crear cuenta</string>
+    <string name="aa_tvTituloI">Crear cuenta</string>
+    <string name="aa_btnCrear">Aceptar</string>
+    <string name="mensaje6_camara">Presione la imagen</string>
 
 </resources>

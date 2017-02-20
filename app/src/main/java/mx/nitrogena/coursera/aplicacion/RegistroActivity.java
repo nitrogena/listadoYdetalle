@@ -68,6 +68,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
 
         findViewById(R.id.ar_btnRegistrar).setOnClickListener(this);
         findViewById(R.id.ar_btnLimpiar).setOnClickListener(this);
+        findViewById(R.id.tvEditarFoto).setOnClickListener(this);
 
     }
 
@@ -81,7 +82,14 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
             case R.id.ar_btnLimpiar:
                 limparCampos(view);
                 break;
+            case R.id.tvEditarFoto:
+                editarFoto(view);
+
         }
+    }
+
+    private void editarFoto(View view) {
+        Toast.makeText(this, R.string.mensaje6_camara, Toast.LENGTH_SHORT).show();
     }
 
     public void limparCampos(View view){
@@ -189,6 +197,8 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
 
             }
         }
+
+
 
         /*camara finaliza*/
 

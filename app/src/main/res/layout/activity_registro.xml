@@ -52,6 +52,12 @@
                 android:src="@drawable/persona_de_sexo_masculino_48"
                 android:layout_gravity="center_horizontal"
                 android:onClick="verMenuPopup"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mopEditarFoto"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/tvEditarFoto"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -17,28 +17,21 @@ import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.FileOutputStream;
-
-import static android.Manifest.permission.READ_CONTACTS;
-
-public class AutenticaActivity extends AppCompatActivity implements View.OnClickListener {
+public class CreaActivity extends AppCompatActivity implements View.OnClickListener {
 
     private AutoCompleteTextView actvCorreo;
     private EditText etContrasenia;
     private View pbProgress;
     private View svScroll;
     private Button btnIngresar;
-    private IniciarSesion isAutentica = null;
-
-    private TextView tvCuenta;
+    private IniciarSesionC isAutentica = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_autentica);
+        setContentView(R.layout.activity_crea);
 
         Toolbar actionBar = (Toolbar) findViewById(R.id.actionBar);
         setSupportActionBar(actionBar);
@@ -53,7 +46,6 @@ public class AutenticaActivity extends AppCompatActivity implements View.OnClick
 */
         findViewById(R.id.btnIngresar).setOnClickListener(this);
         findViewById(R.id.btnLimpiar).setOnClickListener(this);
-        findViewById(R.id.tvEnlaceRegistrar).setOnClickListener(this);
 
         svScroll = findViewById(R.id.svScroll);
         pbProgress = findViewById(R.id.pbProgress);
@@ -70,27 +62,17 @@ public class AutenticaActivity extends AppCompatActivity implements View.OnClick
             case R.id.btnLimpiar:
                 limpiarCampos(view);
                 break;
-            case R.id.tvEnlaceRegistrar:
-                crearCuenta(view);
-                break;
         }
     }
 
-    private void crearCuenta(View view) {
-        Intent intent = new Intent(AutenticaActivity.this, CreaActivity.class);
-        startActivity(intent);
+    public void limpiarCampos(View view){
+        actvCorreo = (AutoCompleteTextView) findViewById(R.id.actvCorreo);
+        etContrasenia = (EditText) findViewById(R.id.etContrasenia);
+        actvCorreo.setText("");
+        etContrasenia.setText("");
     }
 
-    public void limpiarCampos(View view){
-       actvCorreo = (AutoCompleteTextView) findViewById(R.id.actvCorreo);
-       //populateAutoComplete();
-       etContrasenia = (EditText) findViewById(R.id.etContrasenia);
-
-       actvCorreo.setText("");
-       etContrasenia.setText("");
-   }
-
-    public void  registrarUsuario(View view){
+    public void  registrarUsuario(){
         try{
 
             actvCorreo = (AutoCompleteTextView) findViewById(R.id.actvCorreo);
@@ -99,7 +81,7 @@ public class AutenticaActivity extends AppCompatActivity implements View.OnClick
 
             String strUsuario = actvCorreo.getText().toString();
             String strContrasenia = etContrasenia.getText().toString();
-            
+
             SharedPreferences spAutentica = getSharedPreferences("Autenticacion", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = spAutentica.edit();
 
@@ -109,7 +91,7 @@ public class AutenticaActivity extends AppCompatActivity implements View.OnClick
 
             Toast.makeText(this, R.string.ra_mensajeRegistro, Toast.LENGTH_LONG).show();
 
-            Intent intent = new Intent(AutenticaActivity.this, RegistroActivity.class);
+            Intent intent = new Intent(CreaActivity.this, RegistroActivity.class);
             startActivity(intent);
 
         }catch (Exception e){
@@ -195,7 +177,7 @@ public class AutenticaActivity extends AppCompatActivity implements View.OnClick
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            isAutentica = new IniciarSesion(strCorreo, strContrasenia);
+            isAutentica = new IniciarSesionC(strCorreo, strContrasenia);
             isAutentica.execute((Void) null);
         }
     }
@@ -258,12 +240,12 @@ public class AutenticaActivity extends AppCompatActivity implements View.OnClick
     }
 
 
-    public class IniciarSesion extends AsyncTask<Void, Void, Boolean> {
+    public class IniciarSesionC extends AsyncTask<Void, Void, Boolean> {
 
         private final String strUsuario;
         private final String strContrasenia;
 
-        IniciarSesion(String strUsuarioA, String strContraseniaA) {
+        IniciarSesionC(String strUsuarioA, String strContraseniaA) {
             strUsuario = strUsuarioA;
             strContrasenia = strContraseniaA;
         }
@@ -280,7 +262,8 @@ public class AutenticaActivity extends AppCompatActivity implements View.OnClick
             } catch (InterruptedException e) {
                 return false;
             }
-            blRes = mostrarPreferencia(strUsuario, strContrasenia);
+            blRes = true;
+                    //mostrarPreferencia(strUsuario, strContrasenia);
             /*
             for (String credential : DUMMY_CREDENTIALS) {
                 String[] pieces = credential.split(":");
@@ -304,20 +287,22 @@ public class AutenticaActivity extends AppCompatActivity implements View.OnClick
 
             if (success) {
                 //finish();
-                Intent intent = new Intent(AutenticaActivity.this, RegistroActivity.class);
-                startActivity(intent);
+                registrarUsuario();
+                //Intent intent = new Intent(CreaActivity.this, RegistroActivity.class);
+                //startActivity(intent);
             }
             else {
-
-               Snackbar.make(etContrasenia, R.string.aa_preguntaRegistrar, Snackbar.LENGTH_INDEFINITE)
-                       .setAction(android.R.string.ok, new View.OnClickListener() {
-                           public void onClick(View v) {
-                                    registrarUsuario(v);
-                                }
-                            })
-                    .show();
+                /*
+                Snackbar.make(etContrasenia, R.string.aa_preguntaRegistrar, Snackbar.LENGTH_INDEFINITE)
+                        .setAction(android.R.string.ok, new View.OnClickListener() {
+                            public void onClick(View v) {
+                                registrarUsuario(v);
+                            }
+                        })
+                        .show();
                 //etContrasenia.setError(getString(R.string.aa_msgError));
                 //etContrasenia.requestFocus();
+                */
             }
         }
 
