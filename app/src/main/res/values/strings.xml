@@ -24,7 +24,7 @@
     <string name="ai_acercaDe">Aplicación realizada por la organización Right Monkey.</string>
     <string name="ai_derechos">Hecho en México. Todos los derechos reservados</string>
     <string name="ai_Configura">Otro texto</string>
-    <string name="ai_Creditos">Texto de créditos</string>
+    <string name="ai_Creditos">Realizado por: David Chávez, Luis Ezcurdia, Nidia Orduña, Marduk Pérez</string>
     <string name="mo_creditos">Créditos</string>
     <string name="mc_contactar">Contactar</string>
     <string name="mpu_Editar">Cambiar foto</string>
@@ -32,13 +32,12 @@
     <string name="mod_ocultar">Ocultar</string>
     <string name="mo_avRefresh">Refrescar</string>
 
-    <string-array name="arrPlanetas">
-        <item>Mercurio</item>
-        <item>Venus</item>
-        <item>Tierra</item>
-        <item>Marte</item>
-        <item>Jupiter</item>
-        <item>Saturno</item>
+    <string-array name="ai_Creditos">
+        <item>Realizado por:</item>
+        <item>David Chávez</item>
+        <item>Luis Ezcurdia</item>
+        <item>Nidia Irania Orduña Fonseca</item>
+        <item>Marduk Pérez de Lara</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -128,5 +127,10 @@
     <string name="aa_tvTituloI">Crear cuenta</string>
     <string name="aa_btnCrear">Aceptar</string>
     <string name="mensaje6_camara">Presione la imagen</string>
+    <string name="md_ayuda">Ayuda</string>
+    <string name="md_salir">Salir</string>
+    <string name="ai_ayuda">En esta aplicación una empresa puede gestionar las vacantes que ofrece. Es posible ver una lista de las vacantes, el detalle de cada una, y las personas interesadas en cada vacante.</string>
+    <string name="ar_btnModificar">Modificar</string>
+    <string name="cra_msgModifica">La modificación se realizó</string>
 
 </resources>

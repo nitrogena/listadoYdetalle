@@ -25,12 +25,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListaActivity"
-                android:parentActivityName=".VacanteActivity">
+        <activity
+            android:name=".ListaActivity"
+            android:parentActivityName=".VacanteActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".VacanteActivity" />
-        </activity>/>
+        </activity>
+        />
         <activity
             android:name=".DetalleActivity"
             android:parentActivityName=".ListaActivity">
@@ -65,7 +67,8 @@
                 android:value=".VacanteActivity" />
         </activity>
         <activity android:name=".AutenticaActivity" />
-        <activity android:name=".CreaActivity"></activity>
+        <activity android:name=".CreaActivity" />
+        <activity android:name=".ConsultaregistroActivity"></activity>
     </application>
 
 </manifest>

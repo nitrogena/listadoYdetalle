@@ -47,6 +47,10 @@ public class InformativoActivity extends AppCompatActivity {
             tvTexto.setText(getResources().getString(R.string.ai_Creditos));
 
         }
+        if (strTexto.contentEquals("ayuda")){
+
+            tvTexto.setText(getResources().getString(R.string.ai_ayuda));
+        }
 
 
 

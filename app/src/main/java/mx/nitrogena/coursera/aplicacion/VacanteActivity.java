@@ -2,8 +2,11 @@ package mx.nitrogena.coursera.aplicacion;
 
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -13,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Adapter;
 import android.widget.ListView;
 
@@ -37,6 +41,8 @@ public class VacanteActivity extends AppCompatActivity{
 
     private RecyclerView rvListaVacantes;
     //private InterfaceVacantePresenter ivpPresenter;
+    private NavigationView navigationView;
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +79,57 @@ public class VacanteActivity extends AppCompatActivity{
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.av_flVacantes, new VacantesFragment());
         ft.commit();
+
+        navigationView = (NavigationView) findViewById(R.id.navigationActivity_navigationView);
+        drawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
+
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                drawerLayout.closeDrawers();
+                switch (item.getItemId()){
+                    case R.id.menuuno_opcionUno:
+                        Intent intent3 = new Intent(VacanteActivity.this, ConsultaregistroActivity.class);
+                        startActivity(intent3);
+                        return true;
+                    case R.id.menuuno_opcionDos:
+                        mostrarInformativo("creditos");
+                        return true;
+                    case R.id.menuuno_opcionTres:
+                        //Snackbar.make(findViewById(android.R.id.content), "Opcion tres", Snackbar.LENGTH_SHORT).show();
+                        mostrarInformativo("ayuda");
+                        return true;
+                    case R.id.menuuno_opcionCuatro:
+                        Intent intent = new Intent(VacanteActivity.this, MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        intent.putExtra("salir", true);
+                        startActivity(intent);
+                        finish();
+                        return true;
+                }
+                return true;        //se supone que no va
+
+            }
+        });
+
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, actionBar, R.string.app_name, R.string.app_name){
+            @Override
+            public void onDrawerClosed(View drawerView){
+                super.onDrawerClosed(drawerView);
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView){
+                super.onDrawerOpened(drawerView);
+            }
+
+        };
+
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        //sincronizar cuando abre o cuando lo cerramos
+        actionBarDrawerToggle.syncState();
+
     }
 
     private void refrescar() {
